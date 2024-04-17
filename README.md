@@ -13,7 +13,7 @@ We treat this data as a raw source that requires extraction, transformation, and
 ## Goals 
 
 - Create a ASP.Net Core Web API project from scratch.  
-- Create database and table using Cosmos DB emulator for local machine.
+- Create database and table using Azure Cosmos DB Emulator for local machine.
 - Configure database connection using.
 - Install necessary nuget packages.  
 - Create code first database migration.
@@ -32,5 +32,7 @@ We treat this data as a raw source that requires extraction, transformation, and
 - Angular datatable for pagination and sorting. 
 - Configure unit test code coverage and generate reports.
 
+## Azure Cosmos DB Emulator
 
-
+We are using Azure Cosmos DB capabilities and features using the Azure Cosmos DB Emulator because we don't need to purchase any services from Azure right now.
+Download Azure Cosmos DB Emulator for local machine from ([cosmosdb-emulator](https://aka.ms/cosmosdb-emulator))
