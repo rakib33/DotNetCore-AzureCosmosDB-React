@@ -36,3 +36,10 @@ We treat this data as a raw source that requires extraction, transformation, and
 
 We are using Azure Cosmos DB capabilities and features using the Azure Cosmos DB Emulator because we don't need to purchase any services from Azure right now.
 Download Azure Cosmos DB Emulator for local machine from ([cosmosdb-emulator](https://aka.ms/cosmosdb-emulator))
+
+## References
+
+- https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
+- https://github.com/Azure/azure-cosmos-dotnet-v3
+- https://www.c-sharpcorner.com/article/angular-app-with-asp-net-core-and-cosmos-db/
+- https://www.codeproject.com/Articles/1256191/Angular-6-Application-with-Cosmos-DB-and-Web-API-2
