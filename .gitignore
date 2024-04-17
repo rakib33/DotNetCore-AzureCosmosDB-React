@@ -1,0 +1,11 @@
+API/RestaurantOpeningApi/.vs/
+API/RestaurantOpeningApi/RestaurantOpeningApi/bin
+API/RestaurantOpeningApi/RestaurantOpeningApi/obj
+API/RestaurantOpeningApi/RestaurantOpeningApi.Test/bin
+API/RestaurantOpeningApi/RestaurantOpeningApi.Test/obj
+API/RestaurantOpeningApi/RestaurantOpeningApi/Migrations
+UI/node_modules
+UI/dist
+bs-instruction
+hours.csv
+API/RestaurantOpeningApi/RestaurantOpeningApi/wwwroot/
