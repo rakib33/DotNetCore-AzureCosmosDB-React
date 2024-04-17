@@ -17,7 +17,7 @@ We treat this data as a raw source that requires extraction, transformation, and
 - Configure database connection using.
 - Install necessary nuget packages.  
 - Create code first database migration.
-- Create api to load raw data for resturant.
+- Create api to load raw data from csv.
 - Create api to display resturant data.
 - Resturant data filtering by name , date and time.
 - Restaurant data pagination functionality
@@ -37,6 +37,14 @@ We treat this data as a raw source that requires extraction, transformation, and
 We are using Azure Cosmos DB capabilities and features using the Azure Cosmos DB Emulator because we don't need to purchase any services from Azure right now.
 Download Azure Cosmos DB Emulator for local machine from ([cosmosdb-emulator](https://aka.ms/cosmosdb-emulator))
 
+## Install Package
+
+  - Install package Microsoft.EntityFrameworkCore version 6.0.14
+  - Microsoft.EntityFrmaeworkCore Version-6.0.14 
+  - Microsoft.EntityFrmaeworkCore.Tools Version-6.0.14
+  - Microsoft.AspNetCore.Cors Version-2.2.0
+  - CsvHelper Version-31.0.3
+    
 ## References
 
 - https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
