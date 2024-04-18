@@ -5,9 +5,8 @@ namespace RestaurantOpeningApi.Models
 {
     public class RestaurantTime
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Key]     
+        public string Id { get; set; }
 
 
         [Required]
@@ -22,5 +21,11 @@ namespace RestaurantOpeningApi.Models
         [Required]
         [Display(Name = "Closing Time")]
         public TimeOnly ClosingTime { get; set; }
+
+        //Foreign key referencing the Restaurant table as parent
+        public string RestaurantId { get; set; }
+
+        //Navigation property for Restaurant
+        public Restaurant Restaurant { get; set; }
     }
 }

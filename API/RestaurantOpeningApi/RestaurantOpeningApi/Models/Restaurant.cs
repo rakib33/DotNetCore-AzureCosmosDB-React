@@ -5,14 +5,16 @@ namespace RestaurantOpeningApi.Models
 {
     public class Restaurant
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Key]      
+        public string Id { get; set; }
 
 
         [Required]
         [MaxLength(500)]
         [Display(Name = "Restaurant Name")]
         public string Name { get; set; }
+
+        // Navigation property for RestaurantTime
+        public ICollection<RestaurantTime> restaurantTimes { get; set; } = new List<RestaurantTime>();
     }
 }

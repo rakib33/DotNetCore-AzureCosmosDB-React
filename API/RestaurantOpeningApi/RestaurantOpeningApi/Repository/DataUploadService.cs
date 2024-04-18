@@ -7,7 +7,7 @@ using CsvHelper.Configuration.Attributes;
 using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
 
-namespace RestaurantOpeningApi.Services
+namespace RestaurantOpeningApi.Repository
 {
     public class DataUploadService : IDataUploadService
     {
