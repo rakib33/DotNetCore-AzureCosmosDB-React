@@ -47,7 +47,8 @@ Download Azure Cosmos DB Emulator for local machine from ([cosmosdb-emulator](ht
 ## Install Package
 
   - Install package Microsoft.EntityFrameworkCore version 6.0.14
-  - Microsoft.EntityFrmaeworkCore Version-6.0.14 
+  - Microsoft.EntityFrmaeworkCore Version-6.0.14
+  - Microsoft.EntityFrameworkCore.Cosmos Version-6.0.14
   - Microsoft.EntityFrmaeworkCore.Tools Version-6.0.14
   - Microsoft.AspNetCore.Cors Version-2.2.0
   - CsvHelper Version-31.0.3
