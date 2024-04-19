@@ -52,6 +52,9 @@ Download Azure Cosmos DB Emulator for local machine from ([cosmosdb-emulator](ht
   - Microsoft.EntityFrmaeworkCore.Tools Version-6.0.14
   - Microsoft.AspNetCore.Cors Version-2.2.0
   - CsvHelper Version-31.0.3
+  - Moq
+  - xunit
+  - xunit.runner.visualstudio    
 
 ## Create .Net Web API Project
 
@@ -73,7 +76,109 @@ To get started developing a Web API in Visual Studio the first step is to create
 
   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/15054e10-ef7a-4ec7-beaa-3d053f075421)
 
+## Csv Data Uploading API
 
+For data upload from given csv file to database we need to parse the data and then save into database. We can normalize the data into two table. For restaurant name is one table and opening day with time is another table. Now we will create an uploading api for csv and data transfer object model.
+
+- Create a folder DTOs and create a model class RestaurantRawData.cs
+
+  ```
+   public class RestaurantRawData
+   {
+        public string RestaurantName { get; set; }
+        public string OperatingHours { get; set; }
+   }
+  ```
+- Create a folder name Interfaces and create an Interface class IDataUploadService.cs
+
+  ```
+   public interface IDataUploadService
+   {
+        Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream);
+   }
+  ```
+- Create a folder Repository and implement this interface . Create implementing class DataUploadService.cs
+
+  ```
+    using CsvHelper;
+    using CsvHelper.Configuration;
+    using RestaurantOpeningApi.DTOs;
+    using RestaurantOpeningApi.Interfaces;
+    
+    namespace RestaurantOpeningApi.Repository
+    {
+        public class DataUploadService : IDataUploadService
+        {
+            public async Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream)
+            {
+                var configuration = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
+                {
+                    //set to false because the CSV file does not have a header record.
+                    HasHeaderRecord = false,
+                };
+    
+                using var reader = new StreamReader(fileStream);
+                using var csv = new CsvReader(reader, configuration);
+    
+                var records = new List<RestaurantRawData>();
+    
+                await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
+                {
+                    records.Add(record);
+                }
+    
+                return records;
+            }
+        }
+    }
+    
+  ```
+
+- Now we need to inject this service to our project in Program.cs file. Open the file and put this line of code.
+
+  ```  
+   builder.Services.AddScoped<IDataUploadService, DataUploadService>();
+  ```
+- Create a web api controller in Controllers folder named DataUploadController.cs to upload csv file
+
+  ```
+    using Microsoft.AspNetCore.Mvc;
+    using RestaurantOpeningApi.Interfaces;
+    
+    namespace RestaurantOpeningApi.Controllers
+    {
+        [Route("api/[controller]")]
+        [ApiController]
+        public class DataUploadController : ControllerBase
+        {   
+            private readonly IDataUploadService _dataService;
+            public DataUploadController(IDataUploadService dataService)
+            {
+                _dataService = dataService;       
+            }
+    
+            [HttpPost("upload")]
+            public async Task<IActionResult> UploadCsvFile(IFormFile file)
+            {
+                if (file == null || file.Length == 0)
+                {
+                    return BadRequest("Invalid file.");
+                }
+    
+                using var fileStream = file.OpenReadStream();
+                var data = await _dataService.ProcessCsvFileAsync(fileStream);
+    
+                // Return a successful response with status code 201 Created
+                return StatusCode(StatusCodes.Status201Created, "File uploaded successfully.");
+            }
+        }
+    }
+  ```
+- Run the application and check in swagger Ui . Hear is an upload option to upload file 
+
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/368add46-a066-457c-b3eb-7e63e9fc501c)
+
+     
 ## References
 
 - https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
