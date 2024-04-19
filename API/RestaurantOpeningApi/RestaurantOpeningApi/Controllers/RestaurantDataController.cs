@@ -10,8 +10,8 @@ namespace RestaurantOpeningApi.Controllers
     [ApiController]
     public class RestaurantDataController : ControllerBase
     {
-        private readonly RestaurentDataService _restaurentDataService;
-        public RestaurantDataController(RestaurentDataService restaurentDataService)
+        private readonly RestaurantDataService _restaurentDataService;
+        public RestaurantDataController(RestaurantDataService restaurentDataService)
         {
             _restaurentDataService = restaurentDataService;
         }

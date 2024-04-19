@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using CsvHelper;
+﻿using CsvHelper;
 using CsvHelper.Configuration;
-using CsvHelper.Configuration.Attributes;
 using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
+using RestaurantOpeningApi.Models;
 
 namespace RestaurantOpeningApi.Repository
 {
-    public class DataUploadService : IDataUploadService
+    public class RawDataParserService : IRawDataParser
     {
         public async Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream)
         {
@@ -31,5 +28,6 @@ namespace RestaurantOpeningApi.Repository
 
             return records;
         }
+
     }
 }

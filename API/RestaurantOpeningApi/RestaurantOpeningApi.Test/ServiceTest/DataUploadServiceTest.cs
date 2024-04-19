@@ -1,10 +1,4 @@
-﻿using Moq;
-using RestaurantOpeningApi.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RestaurantOpeningApi.Repository;
 using Xunit;
 
 namespace RestaurantOpeningApi.Test.ServiceTest
@@ -15,7 +9,7 @@ namespace RestaurantOpeningApi.Test.ServiceTest
         public async Task ProcessCsvFileAsync_CsvDataTest()
         {
             // Arrange
-            var dataService = new DataUploadService();
+            var dataService = new RawDataParserService();
 
             // Create a memory stream with sample CSV data
             var csvData = "\"Kushi Tsuru\",\"Mon-Sun 11:30 am - 9 pm\"\n\"Osakaya Restaurant\",\"Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm\"";

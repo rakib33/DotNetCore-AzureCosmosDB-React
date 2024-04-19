@@ -4,12 +4,12 @@ using System.Net;
 
 namespace RestaurantOpeningApi.Services
 {
-    public class RestaurentDataService
+    public class RestaurantDataService
     {
         private readonly IRestaurantTimeService _restaurantTimeService;
         private readonly IRestaurantService _restaurantService;
 
-        public RestaurentDataService(IRestaurantTimeService restaurantTimeService, IRestaurantService restaurantService)
+        public RestaurantDataService(IRestaurantTimeService restaurantTimeService, IRestaurantService restaurantService)
         {
             _restaurantService = restaurantService;
             _restaurantTimeService = restaurantTimeService;
