@@ -17,22 +17,30 @@ namespace RestaurantOpeningApi.Common
             // Find matches in the schedule string
             var matches = Regex.Matches(schedule, pattern);
 
-            foreach (Match match in matches)
+            if (matches.Count() != 0)
             {
-                // Extract the day and time range from the match
-                string days = match.Groups[1].Value.Trim();
-                string timeRange = match.Groups[2].Value.Trim();
-
-                // Split the days part by commas to handle multiple day ranges
-                var dayRanges = days.Split(',');
-
-                foreach (var dayRange in dayRanges)
+                foreach (Match match in matches)
                 {
-                    // Trim the day range and add it to the dictionary
-                    string trimmedDayRange = dayRange.Trim();
-                    scheduleDict[trimmedDayRange] = timeRange;
+                    // Extract the day and time range from the match
+                    string days = match.Groups[1].Value.Trim();
+                    string timeRange = match.Groups[2].Value.Trim();
+
+                    // Split the days part by commas to handle multiple day ranges
+                    var dayRanges = days.Split(',');
+
+                    foreach (var dayRange in dayRanges)
+                    {
+                        // Trim the day range and add it to the dictionary
+                        string trimmedDayRange = dayRange.Trim();
+                        scheduleDict[trimmedDayRange] = timeRange;
+                    }
                 }
             }
+            else
+            {
+                scheduleDict[schedule] = schedule;
+            }
+            
 
             return scheduleDict;
         }
