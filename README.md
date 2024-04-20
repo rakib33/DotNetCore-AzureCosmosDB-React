@@ -457,6 +457,47 @@ For data upload from given csv file to database we need to parse the data and th
         return scheduleDict;
     }
   ```
+## Unit Testing 
+
+- Create a xUnit test project named RestaurantOpeningApi.Test
+- Create Data upload Service test under folder ServiceTest
+- Add reference from RestaurantOpeningApi and install xUnit test , moq .
+  
+  ```
+    using RestaurantOpeningApi.Repository;
+    using Xunit;
+    
+    namespace RestaurantOpeningApi.Test.ServiceTest
+    {
+        public class DataUploadServiceTest
+        {
+            [Fact]
+            public async Task ProcessCsvFileAsync_CsvDataTest()
+            {
+                // Arrange
+                var dataService = new RawDataParserService();
+    
+                // Create a memory stream with sample CSV data
+                var csvData = "\"Kushi Tsuru\",\"Mon-Sun 11:30 am - 9 pm\"\n\"Osakaya Restaurant\",\"Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm\"";
+                using var memoryStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(csvData));
+    
+                // Act
+                var data = await dataService.ProcessCsvFileAsync(memoryStream);
+    
+                // Assert
+                Assert.NotNull(data);
+                Assert.Equal(2, data.Count());
+                Assert.Equal("Kushi Tsuru", data.First().Name);
+                Assert.Equal("Mon-Sun 11:30 am - 9 pm", data.First().OperatingTime);
+            }
+            
+        }
+    }
+
+  ```
+- Run the test cases.
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/846e1847-a5a4-4394-8b8d-4ad962757424)
+
   
 
 ## Create Angular App
