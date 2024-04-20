@@ -89,94 +89,375 @@ For data upload from given csv file to database we need to parse the data and th
         public string OperatingHours { get; set; }
    }
   ```
-- Create a folder name Interfaces and create an Interface class IDataUploadService.cs
+- Create Model folder and add class Restaurant.cs that containes restaurant name and operating time
+  ```
+  public class Restaurant
+  {
+      [Key]      
+      public string Id { get; set; }
+
+
+      [Required]
+      [MaxLength(500)]
+      [Display(Name = "Restaurant Name")]
+      public string Name { get; set; }
+      public string OperatingTime { get; set; }
+
+      // Navigation property for RestaurantTime
+      public ICollection<RestaurantTime> restaurantTimes { get; set; } = new List<RestaurantTime>();
+  }
+  ```
+- Now we also create another class named RestaurantTime.cs. This is child property we will save restaurant opening day and opening time and closing time also.
+  ```
+  public class RestaurantTime
+  {
+      [Key]     
+      public string Id { get; set; }
+
+
+      [Required]
+      [MaxLength(15)]
+      [Display(Name = "Opening Day")]
+      public string OpeningDay { get; set; }
+
+      [Required]
+      [Display(Name = "Opening Time")]
+      public TimeOnly OpeningTime { get; set; }
+
+      [Required]
+      [Display(Name = "Closing Time")]
+      public TimeOnly ClosingTime { get; set; }
+
+      //Foreign key referencing the Restaurant table as parent
+      public string RestaurantId { get; set; }
+
+      //Navigation property for Restaurant
+      public Restaurant Restaurant { get; set; }
+  }
+  ```
+- Create a folder name Interfaces and create an Interface class IRawDataParser.cs
 
   ```
-   public interface IDataUploadService
-   {
-        Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream);
-   }
+  using RestaurantOpeningApi.DTOs;
+
+  namespace RestaurantOpeningApi.Interfaces
+  {
+      public interface IRawDataParser
+      {
+          Task<IEnumerable<Restaurant>> ProcessCsvFileAsync(Stream fileStream);
+      }
+  }
   ```
-- Create a folder Repository and implement this interface . Create implementing class DataUploadService.cs
+- Create another interface IRestaurantService.cs
+
+```
+  public interface IRestaurantService
+  {
+      Task<List<Restaurant>> GetAllRestaurantAsync();
+      Task AddRestaurantAsync(Restaurant restaurant);      
+      Task AddListRestaurantAsync(List<Restaurant> restaurant);      
+      void DeleteAsync(string id);
+      Task SaveChangesAsync();
+
+  }
+```
+
+- Create a folder Repository and implement this interface . Create implementing class RawDataParserService.cs
 
   ```
-    using CsvHelper;
-    using CsvHelper.Configuration;
-    using RestaurantOpeningApi.DTOs;
-    using RestaurantOpeningApi.Interfaces;
-    
-    namespace RestaurantOpeningApi.Repository
+  using CsvHelper;
+  using CsvHelper.Configuration;
+  using RestaurantOpeningApi.DTOs;
+  using RestaurantOpeningApi.Interfaces;
+  
+  namespace RestaurantOpeningApi.Repository
+  {
+   public class RawDataParserService : IRawDataParser
     {
-        public class DataUploadService : IDataUploadService
-        {
-            public async Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream)
-            {
-                var configuration = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
-                {
-                    //set to false because the CSV file does not have a header record.
-                    HasHeaderRecord = false,
-                };
-    
-                using var reader = new StreamReader(fileStream);
-                using var csv = new CsvReader(reader, configuration);
-    
-                var records = new List<RestaurantRawData>();
-    
-                await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
-                {
-                    records.Add(record);
-                }
-    
-                return records;
-            }
-        }
+       public async Task<IEnumerable<Restaurant>> ProcessCsvFileAsync(Stream fileStream)
+       {
+           var configuration = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
+           {
+               //set to false because the CSV file does not have a header record.
+               HasHeaderRecord = false,
+           };
+
+           using var reader = new StreamReader(fileStream);
+           using var csv = new CsvReader(reader, configuration);
+
+           var records = new List<Restaurant>();
+
+           await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
+           {
+
+               records.Add(new Restaurant { 
+                 Id = Guid.NewGuid().ToString(),
+                 Name = record.RestaurantName,
+                 OperatingTime = record.OperatingHours,
+               });
+           }
+
+           return records;
+       }
     }
+  }
+
     
   ```
+- For IRestaurantService 
+  ```
+   public class RestaurantRepoService : IRestaurantService
+   {
+       RestaurantContext _context;
+       public RestaurantRepoService(RestaurantContext restaurantContext)
+       {
+           _context = restaurantContext;
+       }
+  
+       public async Task AddListRestaurantAsync(List<Restaurant> restaurant)
+       {
+           try
+           {
+             await  _context.Restaurants.AddRangeAsync(restaurant);
+           }
+           catch (Exception)
+           {
+               throw;
+           }
+       }
+  
+       public async Task AddRestaurantAsync(Restaurant restaurant)
+       {
+           try
+           {
+              await _context.Restaurants.AddAsync(restaurant);                
+           }
+           catch (Exception)
+           {
+               throw;
+           }
+       }
+  
+       public void DeleteAsync(string id)
+       {
+           var restaurant =  _context.Restaurants.Where(t=>t.Id == id).FirstOrDefault();
+           if (restaurant != null)
+           {
+               _context.Restaurants.Remove(restaurant);
+           }
+       }
+  
+       public Task<List<Restaurant>> GetAllRestaurantAsync()
+       {
+           throw new NotImplementedException();
+       }
+  
+       public async Task SaveChangesAsync()
+       {
+           await _context.SaveChangesAsync();
+       }
+
+   }
+  ``` 
 
 - Now we need to inject this service to our project in Program.cs file. Open the file and put this line of code.
 
-  ```  
-   builder.Services.AddScoped<IDataUploadService, DataUploadService>();
+  ```    
+  builder.Services.AddScoped<IRawDataParser, RawDataParserService>();
+  builder.Services.AddScoped<IRestaurantService, RestaurantRepoService>();
   ```
-- Create a web api controller in Controllers folder named DataUploadController.cs to upload csv file
+- Create a web api controller in Controllers folder named RestaurantDataController.cs to upload csv file
 
   ```
     using Microsoft.AspNetCore.Mvc;
     using RestaurantOpeningApi.Interfaces;
+    using RestaurantOpeningApi.Models;
     
     namespace RestaurantOpeningApi.Controllers
     {
         [Route("api/[controller]")]
         [ApiController]
-        public class DataUploadController : ControllerBase
+        public class RestaurantDataUploadController : ControllerBase
         {   
-            private readonly IDataUploadService _dataService;
-            public DataUploadController(IDataUploadService dataService)
+            private readonly IRawDataParser _dataService;
+            private readonly IRestaurantService _restaurantService;
+            public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantService restaurantService)
             {
-                _dataService = dataService;       
+                _dataService = dataService;     
+                _restaurantService = restaurantService;
             }
+            
     
             [HttpPost("upload")]
             public async Task<IActionResult> UploadCsvFile(IFormFile file)
             {
                 if (file == null || file.Length == 0)
                 {
-                    return BadRequest("Invalid file.");
+                    return BadRequest("No file uploaded.");
+                }
+    
+                // Check the file extension
+                var extension = Path.GetExtension(file.FileName).ToLower();
+                if (extension != ".csv")
+                {
+                    return BadRequest("Invalid file type. Only CSV files are allowed.");
                 }
     
                 using var fileStream = file.OpenReadStream();
-                var data = await _dataService.ProcessCsvFileAsync(fileStream);
+                List<Restaurant> restaurants = await _dataService.ProcessCsvFileAsync(fileStream);
     
-                // Return a successful response with status code 201 Created
-                return StatusCode(StatusCodes.Status201Created, "File uploaded successfully.");
+                if (restaurants.Count() > 0)
+                {
+                    // process this data and save to database                
+    
+                    try
+                    {                  
+                        await _restaurantService.AddListRestaurantAsync(restaurants);
+                        await _restaurantService.SaveChangesAsync();
+                        return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
+                    }
+                    catch (Exception)
+                    {
+                        return StatusCode(StatusCodes.Status500InternalServerError, "Data uploaded failed.");
+                    }
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound, "File don't have any data.");
+                }                  
             }
         }
     }
-  ```
-- Run the application and check in swagger Ui . Hear is an upload option to upload file 
 
-  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/368add46-a066-457c-b3eb-7e63e9fc501c)
+  ```
+- Now we need to create a Database in azure cosmos DB . Though we want not to create in azure portal that is needed payment credit card info. We will use azure cosmos db emulator that 
+  is as same as azure portal. After installing the emultor run this. 
+
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/9b1d0e6e-b36a-4bf4-ad68-37d6598a6ea2)
+
+- Click Open Data Explorer and it open on a browser.
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/ec334235-d6d7-4c3f-91ab-ac093d3260cd)
+
+- Hear URI is account end point and Primary Key is Account Key. Now lets create a db context class. To connect this database.Create a folder DataContext and class RestaurantContext.cs
+
+   ```
+    using Microsoft.EntityFrameworkCore;
+    using RestaurantOpeningApi.Models;
+    using Microsoft.EntityFrameworkCore.Cosmos;
+   
+    namespace RestaurantOpeningApi.DataContext
+    {
+        public class RestaurantContext : DbContext
+        {
+            public RestaurantContext(DbContextOptions<RestaurantContext> options) : base(options)
+            {
+            }
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            {
+               base.OnConfiguring(optionsBuilder);
+               optionsBuilder.UseCosmos(
+                    "https://localhost:8081",
+                    "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
+                    databaseName: "restaurant-db");
+            }
+            public DbSet<Restaurant> Restaurants { get; set; }
+            public DbSet<RestaurantTime> RestaurantTimes { get; set; }
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
+                base.OnModelCreating(modelBuilder);
+                
+                // Set the table name for the Parent entity
+                modelBuilder.Entity<Restaurant>()
+                    .ToContainer("Restaurant")
+                    .HasPartitionKey(e=>e.Id); // Specify the table name
+    
+                // Set the table name for the Child entity
+                modelBuilder.Entity<RestaurantTime>()
+                    .ToContainer("RestaurantTime")
+                    .HasPartitionKey(e=>e.Id); // Specify the table name
+    
+                modelBuilder.Entity<Restaurant>()
+                                 .HasMany(p => p.restaurantTimes)
+                                 .WithOne(c => c.Restaurant)
+                                 .HasForeignKey(c => c.RestaurantId);    
+               
+            }
+        }
+    }
+
+  ```
+- Database connection string is here
+  ```
+  optionsBuilder.UseCosmos(
+                    "https://localhost:8081",
+                    "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
+                    databaseName: "restaurant-db");
+  ```
+- Now create the database in cosmos db and create two table. In cosmos db table is container. Click Explorer , give Database Id name as database name ,Container Id is table name and 
+  Partition Id is Primary Key name ID
+  
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/4f309548-b236-42da-aa27-541176a647a4)
+
+- Same approch create another container RestaurantTime. We only create the container no table field as like sql table schema . This is Schemaless. 
+  
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/5931529c-eadd-4d96-a9c4-98f4696a7ceb)
+  
+- Run the application and check in swagger Ui . Hear is an upload option to upload file from swagger. Select the csv file and Execute.
+
+   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/85776dbe-fe69-44a1-95a7-ec84bae1b9be)
+
+- Swagger will return status code. Check the status code. 
+
+- Now open cosmos explorer and check the data are saved.
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/3ee38bf9-a55f-424f-8abc-03c8c0fd6c5b)
+
+## Parsing OperatingTime
+
+- We need to do parsing OperatingTime and insert into child table RestaurantTime.So we need to refactor our avobe code after parsing operating time.We are now create an parser algorithm 
+  using regular expression.
+- Create a class CommonManagement.cs under Common folder. And create a method ParseOperatingDayAndTime.
+
+   ```
+  public static Dictionary<string, string> ParseOperatingDayAndTime(string schedule)
+    {
+        // Initialize a dictionary to hold the parsed data
+        var scheduleDict = new Dictionary<string, string>();
+
+        // Regular expression to match day ranges and time ranges
+        string pattern = @"((?:[A-Za-z]+(?:[,\s*-][A-Za-z]+)?(?:,\s*)?)+)\s+(\d{1,2}\s+[ap]m\s+-\s+\d{1,2}:\d{2}\s+[ap]m)";
+  
+        // Find matches in the schedule string
+        var matches = Regex.Matches(schedule, pattern);
+
+        if (matches.Count() != 0)
+        {
+            foreach (Match match in matches)
+            {
+                // Extract the day and time range from the match
+                string days = match.Groups[1].Value.Trim();
+                string timeRange = match.Groups[2].Value.Trim();
+
+                // Split the days part by commas to handle multiple day ranges
+                var dayRanges = days.Split(',');
+
+                foreach (var dayRange in dayRanges)
+                {
+                    // Trim the day range and add it to the dictionary
+                    string trimmedDayRange = dayRange.Trim();
+                    scheduleDict[trimmedDayRange] = timeRange;
+                }
+            }
+        }
+        else
+        {
+            scheduleDict[schedule] = schedule;
+        }
+        
+
+        return scheduleDict;
+    }
+  ```
+  
 
 ## Create Angular App
 
