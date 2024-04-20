@@ -21,8 +21,8 @@ namespace RestaurantOpeningApi.Test.ServiceTest
             // Assert
             Assert.NotNull(data);
             Assert.Equal(2, data.Count());
-            Assert.Equal("Kushi Tsuru", data.First().RestaurantName);
-            Assert.Equal("Mon-Sun 11:30 am - 9 pm", data.First().OperatingHours);
+            Assert.Equal("Kushi Tsuru", data.First().Name);
+            Assert.Equal("Mon-Sun 11:30 am - 9 pm", data.First().OperatingTime);
         }
         
     }

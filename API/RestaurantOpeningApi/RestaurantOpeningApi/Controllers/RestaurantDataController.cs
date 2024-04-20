@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 using RestaurantOpeningApi.Services;
 using System.Net;
@@ -9,7 +10,7 @@ namespace RestaurantOpeningApi.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class RestaurantDataController : ControllerBase
-    {
+    {    
         private readonly RestaurantDataService _restaurentDataService;
         public RestaurantDataController(RestaurantDataService restaurentDataService)
         {

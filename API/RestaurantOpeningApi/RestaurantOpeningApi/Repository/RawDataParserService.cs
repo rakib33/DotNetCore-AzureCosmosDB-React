@@ -8,7 +8,7 @@ namespace RestaurantOpeningApi.Repository
 {
     public class RawDataParserService : IRawDataParser
     {
-        public async Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream)
+        public async Task<List<Restaurant>> ProcessCsvFileAsync(Stream fileStream)
         {
             var configuration = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
             {
@@ -19,11 +19,16 @@ namespace RestaurantOpeningApi.Repository
             using var reader = new StreamReader(fileStream);
             using var csv = new CsvReader(reader, configuration);
 
-            var records = new List<RestaurantRawData>();
+            var records = new List<Restaurant>();
 
             await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
             {
-                records.Add(record);
+
+                records.Add(new Restaurant { 
+                  Id = Guid.NewGuid().ToString(),
+                  Name = record.RestaurantName,
+                  OperatingTime = record.OperatingHours,
+                });
             }
 
             return records;

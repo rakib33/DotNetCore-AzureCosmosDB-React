@@ -33,11 +33,12 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IRawDataParser, RawDataParserService>();
-builder.Services.AddScoped<IRestaurantTimeParser, RestaurantTimeParser>();
 builder.Services.AddScoped<IRestaurantService, RestaurantRepoService>();
-builder.Services.AddScoped<IRestaurantTimeService, RestaurantTimeRepoService>();
 
-builder.Services.AddScoped<RestaurantDataService>();
+//builder.Services.AddScoped<IRestaurantTimeParser, RestaurantTimeParser>();
+//builder.Services.AddScoped<IRestaurantTimeService, RestaurantTimeRepoService>();
+
+//builder.Services.AddScoped<RestaurantDataService>();
 
 builder.Services.AddResponseCaching();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -14,9 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\RestaurantDataController.cs" />
     <Compile Remove="Controllers\UsersController.cs" />
     <Compile Remove="Controllers\WeatherForecastController.cs" />
     <Compile Remove="Models\User.cs" />
+    <Compile Remove="Repository\RestaurantTimeParser.cs" />
+    <Compile Remove="Repository\RestaurantTimeRepoService.cs" />
+    <Compile Remove="Services\RestaurantDataService.cs" />
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 

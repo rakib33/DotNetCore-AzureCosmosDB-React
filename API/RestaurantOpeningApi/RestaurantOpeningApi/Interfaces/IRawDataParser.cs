@@ -5,7 +5,7 @@ namespace RestaurantOpeningApi.Interfaces
 {
     public interface IRawDataParser
     {
-        Task<IEnumerable<RestaurantRawData>> ProcessCsvFileAsync(Stream fileStream);
+        Task<List<Restaurant>> ProcessCsvFileAsync(Stream fileStream);
      
     }
 }

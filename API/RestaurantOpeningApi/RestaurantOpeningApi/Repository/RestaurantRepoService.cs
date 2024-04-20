@@ -12,11 +12,24 @@ namespace RestaurantOpeningApi.Services
         {
             _context = restaurantContext;
         }
+
+        public async Task AddListRestaurantAsync(List<Restaurant> restaurant)
+        {
+            try
+            {
+              await  _context.Restaurants.AddRangeAsync(restaurant);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task AddRestaurantAsync(Restaurant restaurant)
         {
             try
             {
-                _context.Restaurants.Add(restaurant);                
+               await _context.Restaurants.AddAsync(restaurant);                
             }
             catch (Exception)
             {

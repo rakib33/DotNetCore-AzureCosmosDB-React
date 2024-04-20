@@ -8,6 +8,7 @@ namespace RestaurantOpeningApi.Interfaces
     {
         Task<List<Restaurant>> GetAllRestaurantAsync();
         Task AddRestaurantAsync(Restaurant restaurant);      
+        Task AddListRestaurantAsync(List<Restaurant> restaurant);      
         void DeleteAsync(string id);
         Task SaveChangesAsync();
 

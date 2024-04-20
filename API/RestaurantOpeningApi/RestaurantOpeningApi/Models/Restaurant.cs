@@ -13,6 +13,7 @@ namespace RestaurantOpeningApi.Models
         [MaxLength(500)]
         [Display(Name = "Restaurant Name")]
         public string Name { get; set; }
+        public string OperatingTime { get; set; }
 
         // Navigation property for RestaurantTime
         public ICollection<RestaurantTime> restaurantTimes { get; set; } = new List<RestaurantTime>();
