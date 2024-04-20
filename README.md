@@ -178,7 +178,26 @@ For data upload from given csv file to database we need to parse the data and th
 
   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/368add46-a066-457c-b3eb-7e63e9fc501c)
 
-     
+## Create Angular App
+
+- Install Node in your pc https://nodejs.org/en/download
+- Open command promt as admin and check node version.
+- Install angular cli 
+  ```
+  npm install -g @angular/cli
+  ```
+- create new angular app
+  ```
+  ng new restaurantApp
+  ```
+- Open visual studio code editor
+  ```
+  code .
+  ```
+- Open project src folder in vs code editor
+  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/7cf14011-f9b9-41bc-8f49-43226b1f5a36)
+  
+  
 ## References
 
 - https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
