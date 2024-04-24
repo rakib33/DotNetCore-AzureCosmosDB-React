@@ -16,6 +16,6 @@ namespace RestaurantOpeningApi.Models
         public string OperatingTime { get; set; }
 
         // Navigation property for RestaurantTime
-        public ICollection<RestaurantTime> restaurantTimes { get; set; } = new List<RestaurantTime>();
+        public List<RestaurantTime> restaurantTimes { get; set; } = new List<RestaurantTime>();
     }
 }

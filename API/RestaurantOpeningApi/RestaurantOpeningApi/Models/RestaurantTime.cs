@@ -16,11 +16,11 @@ namespace RestaurantOpeningApi.Models
 
         [Required]
         [Display(Name = "Opening Time")]
-        public TimeOnly OpeningTime { get; set; }
+        public TimeSpan OpeningTime { get; set; }
 
         [Required]
         [Display(Name = "Closing Time")]
-        public TimeOnly ClosingTime { get; set; }
+        public TimeSpan ClosingTime { get; set; }
 
         //Foreign key referencing the Restaurant table as parent
         public string RestaurantId { get; set; }
