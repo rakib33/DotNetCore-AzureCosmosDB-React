@@ -12,20 +12,12 @@ namespace RestaurantOpeningApi.Controllers
     public class RestaurantDataUploadController : ControllerBase
     {   
         private readonly IRawDataParser _dataService;
-        private readonly IRestaurantService _restaurantService;
-        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantService restaurantService)
+        private readonly IRestaurantRawDataService _restaurantRawDataService;
+        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantRawDataService restaurantRawDataService)
         {
             _dataService = dataService;     
-            _restaurantService = restaurantService;
-
+            _restaurantRawDataService = restaurantRawDataService;
         }
-
-        //[HttpGet("ParseOperatingTime")]
-        //public async Task<IActionResult> OperatingTimeParse()
-        //{
-        //    IEnumerable<RestaurantTime> restaurants = await _restaurantTimeParser.ParseRestaurantOperatingTime("");
-        //    return Ok();
-        //}
 
         [HttpPost("upload")]
         public async Task<IActionResult> UploadCsvFile(IFormFile file)
@@ -47,14 +39,12 @@ namespace RestaurantOpeningApi.Controllers
             List<Restaurant> restaurants = await _dataService.ProcessCsvFileAsync(fileStream);
 
             if (restaurants.Count() > 0)
-            {
-                // process this data and save to database                
+            {           
 
                 try
-                {                  
-                    await _restaurantService.AddListRestaurantAsync(restaurants);
-                    await _restaurantService.SaveChangesAsync();
-                    return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
+                {
+                    var responseTime = await _restaurantRawDataService.AddRestaurantBatchAsync(restaurants,100);
+                    return Ok(StatusCode(StatusCodes.Status201Created, "Data uploaded successfully. UploadTime:"+ responseTime));
                 }
                 catch (Exception)
                 {

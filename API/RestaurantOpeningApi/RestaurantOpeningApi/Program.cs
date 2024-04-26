@@ -34,6 +34,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IRawDataParser, RawDataParserService>();
 builder.Services.AddScoped<IRestaurantService, RestaurantRepoService>();
+builder.Services.AddScoped<IRestaurantRawDataService, RestaurantRawDataService>();
 
 //builder.Services.AddScoped<IRestaurantTimeParser, RestaurantTimeParser>();
 //builder.Services.AddScoped<IRestaurantTimeService, RestaurantTimeRepoService>();

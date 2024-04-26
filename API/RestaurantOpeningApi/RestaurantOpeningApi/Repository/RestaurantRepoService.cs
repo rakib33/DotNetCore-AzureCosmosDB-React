@@ -3,6 +3,7 @@ using RestaurantOpeningApi.DataContext;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 
+
 namespace RestaurantOpeningApi.Services
 {
     public class RestaurantRepoService : IRestaurantService
@@ -13,16 +14,9 @@ namespace RestaurantOpeningApi.Services
             _context = restaurantContext;
         }
 
-        public async Task AddListRestaurantAsync(List<Restaurant> restaurant)
-        {
-            try
-            {
-              await  _context.Restaurants.AddRangeAsync(restaurant);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+        public async Task AddBulkRestaurantAsync(List<Restaurant> restaurant)
+        {         
+            await  _context.Restaurants.AddRangeAsync(restaurant);              
         }
 
         public async Task AddRestaurantAsync(Restaurant restaurant)
