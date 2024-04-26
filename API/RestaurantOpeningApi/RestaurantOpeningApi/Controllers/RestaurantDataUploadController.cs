@@ -68,10 +68,25 @@ namespace RestaurantOpeningApi.Controllers
         [HttpGet("GetRestaurantData")]
         [ProducesResponseType(typeof(List<Restaurant>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IEnumerable<Restaurant>> GetRestaurantsAsync(string restaurantName, string days, TimeSpan time)
+        public async Task<IEnumerable<Restaurant>> GetRestaurantsAsync(int currentPage, int totalItemPerPage,string name,string day,string time)
         {
-            var restaurantData = await _restaurantDataService.GetRestaurantAsync();
-           return  restaurantData;
+             RestaurantParameters restaurantParameters = new RestaurantParameters();
+            var restaurantData = await _restaurantDataService.GetRestaurantAsync(restaurantParameters);
+
+           // restaurants = restaurants.Skip((p.Pagination.PageNumber - 1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
+            //var metadata = new
+            //{
+            //    owners.TotalCount,
+            //    owners.PageSize,
+            //    owners.CurrentPage,
+            //    owners.TotalPages,
+            //    owners.HasNext,
+            //    owners.HasPrevious
+            //};
+            //Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+            //_logger.LogInfo($"Returned {owners.TotalCount} owners from database.");
+            //return Ok(owners);
+            return  restaurantData;
 
         }
     }

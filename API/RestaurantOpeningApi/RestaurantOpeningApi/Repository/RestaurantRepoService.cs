@@ -1,5 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
+using RestaurantOpeningApi.Common;
 using RestaurantOpeningApi.DataContext;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
@@ -45,17 +46,34 @@ namespace RestaurantOpeningApi.Services
             }
         }
 
-        public async Task<List<Restaurant>> GetAllRestaurantAsync()
+        public async Task<List<Restaurant>> GetAllRestaurantAsync(RestaurantParameters p)
         {
-          List<Restaurant> restaurantData = await   _context.Restaurants.ToListAsync();
-         
+
+           var query =  _context.Restaurants.AsQueryable();
+            
+            //Apply filtering 
+            if (!string.IsNullOrEmpty(p.name))
+                query = query.Where(s => s.Name.Contains(p.name));
+           
+            List<Restaurant> restaurants = await query.ToListAsync();
             //Explicit Loading
-            foreach(var restaurant in restaurantData)
+            foreach (var restaurant in restaurants)
             {
                await _context.Entry(restaurant).Collection(p=>p.restaurantTimes).LoadAsync();
             }
 
-            return restaurantData;
+            //if (!string.IsNullOrEmpty(p.day))
+            //    restaurants = restaurants.Where(s => s.restaurantTimes.Any
+            //                                                                   (c => c.OpeningDay.Contains(p.day))
+            //                                                           ).ToList();
+            
+            //if(p.time != null)
+
+            //    restaurants = restaurants.Where(s => s.restaurantTimes.Any
+            //                                                                  (c => p?.time <= c.ClosingTime && p?.time >= c.OpeningTime)
+            //                                                          ).ToList();
+         
+            return restaurants;
 
         }
 

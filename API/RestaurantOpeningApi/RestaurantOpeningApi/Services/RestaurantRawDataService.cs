@@ -1,4 +1,5 @@
-﻿using RestaurantOpeningApi.Interfaces;
+﻿using RestaurantOpeningApi.Common;
+using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 
 namespace RestaurantOpeningApi.Services
@@ -32,10 +33,14 @@ namespace RestaurantOpeningApi.Services
             return TimeSpan;
         }
 
-        public async Task<List<Restaurant>> GetRestaurantAsync()
+        public async Task<List<Restaurant>> GetRestaurantAsync(RestaurantParameters restaurantParameters)
         {
-          return await _restaurantService.GetAllRestaurantAsync();
-           
+            return await _restaurantService.GetAllRestaurantAsync(restaurantParameters);
+
+      //      return PagedList<Restaurant>.ToPagedList(await _restaurantService.GetAllRestaurantAsync().OrderBy(on => on.Name),
+      //ownerParameters.PageNumber,
+      //ownerParameters.PageSize);
+
         }
     }
 }
