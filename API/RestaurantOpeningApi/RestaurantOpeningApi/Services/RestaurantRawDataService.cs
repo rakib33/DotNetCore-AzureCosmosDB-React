@@ -3,16 +3,18 @@ using RestaurantOpeningApi.Models;
 
 namespace RestaurantOpeningApi.Services
 {
-    public class RestaurantRawDataService : IRestaurantRawDataService
+    public class RestaurantDataService : IRestaurantDataService
     {
       
         private readonly IRestaurantService _restaurantService;
+        private readonly IRestaurantTimeService _restaurantTimeService;
         private DateTime Start;
         private TimeSpan TimeSpan;
 
-        public RestaurantRawDataService( IRestaurantService restaurantService)
+        public RestaurantDataService( IRestaurantService restaurantService, IRestaurantTimeService restaurantTimeService)
         {   
             _restaurantService = restaurantService;          
+            _restaurantTimeService = restaurantTimeService;
         }
 
         public async Task<TimeSpan> AddRestaurantBatchAsync(List<Restaurant> restaurants, int batchSize)
@@ -28,6 +30,12 @@ namespace RestaurantOpeningApi.Services
             
             TimeSpan = DateTime.Now - Start;
             return TimeSpan;
+        }
+
+        public async Task<List<Restaurant>> GetRestaurantAsync()
+        {
+          return await _restaurantService.GetAllRestaurantAsync();
+           
         }
     }
 }

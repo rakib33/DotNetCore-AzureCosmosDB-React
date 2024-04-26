@@ -2,8 +2,9 @@
 
 namespace RestaurantOpeningApi.Interfaces
 {
-    public interface IRestaurantRawDataService
+    public interface IRestaurantDataService
     {
         Task<TimeSpan> AddRestaurantBatchAsync(List<Restaurant> restaurant, int batchSize);
+        Task<List<Restaurant>> GetRestaurantAsync(  );
     }
 }

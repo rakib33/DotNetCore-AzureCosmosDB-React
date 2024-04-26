@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using RestaurantOpeningApi.Common;
 using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
@@ -12,11 +13,11 @@ namespace RestaurantOpeningApi.Controllers
     public class RestaurantDataUploadController : ControllerBase
     {   
         private readonly IRawDataParser _dataService;
-        private readonly IRestaurantRawDataService _restaurantRawDataService;
-        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantRawDataService restaurantRawDataService)
+        private readonly IRestaurantDataService _restaurantDataService;
+        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantDataService restaurantDataService)
         {
             _dataService = dataService;     
-            _restaurantRawDataService = restaurantRawDataService;
+            _restaurantDataService = restaurantDataService;
         }
 
         [HttpPost("upload")]
@@ -43,7 +44,7 @@ namespace RestaurantOpeningApi.Controllers
 
                 try
                 {
-                    var responseTime = await _restaurantRawDataService.AddRestaurantBatchAsync(restaurants,100);
+                    var responseTime = await _restaurantDataService.AddRestaurantBatchAsync(restaurants,100);
                     return Ok(StatusCode(StatusCodes.Status201Created, "Data uploaded successfully. UploadTime:"+ responseTime));
                 }
                 catch (Exception)
@@ -58,6 +59,20 @@ namespace RestaurantOpeningApi.Controllers
 
             
           
+        }
+
+        /// <summary>
+        ///  get all restaurant
+        /// </summary>
+        /// <returns>The list of restaurant </returns>
+        [HttpGet("GetRestaurantData")]
+        [ProducesResponseType(typeof(List<Restaurant>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IEnumerable<Restaurant>> GetRestaurantsAsync(string restaurantName, string days, TimeSpan time)
+        {
+            var restaurantData = await _restaurantDataService.GetRestaurantAsync();
+           return  restaurantData;
+
         }
     }
 }

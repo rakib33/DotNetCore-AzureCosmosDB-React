@@ -1,4 +1,5 @@
 ﻿using Microsoft.Azure.Cosmos;
+using Microsoft.EntityFrameworkCore;
 using RestaurantOpeningApi.DataContext;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
@@ -23,6 +24,10 @@ namespace RestaurantOpeningApi.Services
         {
             try
             {
+                //disable change tracker
+                _context.ChangeTracker.AutoDetectChangesEnabled = false;
+                //new entities and  don't exist in the database , So apply AsNoTracking to prevent EF Core from tracking them.This improve speed.
+                _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
                await _context.Restaurants.AddAsync(restaurant);                
             }
             catch (Exception)
@@ -40,9 +45,18 @@ namespace RestaurantOpeningApi.Services
             }
         }
 
-        public Task<List<Restaurant>> GetAllRestaurantAsync()
+        public async Task<List<Restaurant>> GetAllRestaurantAsync()
         {
-            throw new NotImplementedException();
+          List<Restaurant> restaurantData = await   _context.Restaurants.ToListAsync();
+         
+            //Explicit Loading
+            foreach(var restaurant in restaurantData)
+            {
+               await _context.Entry(restaurant).Collection(p=>p.restaurantTimes).LoadAsync();
+            }
+
+            return restaurantData;
+
         }
 
         public async Task SaveChangesAsync()

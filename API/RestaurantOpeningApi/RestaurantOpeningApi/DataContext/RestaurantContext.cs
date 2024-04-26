@@ -26,19 +26,20 @@ namespace RestaurantOpeningApi.DataContext
             // Set the table name for the Parent entity
             modelBuilder.Entity<Restaurant>()
                 .ToContainer("Restaurant")
-                .HasPartitionKey(e=>e.Id); // Specify the table name
+                .HasPartitionKey(e=>e.Id)
+                .HasAlternateKey(x=>x.Id); // Specify the table name
 
             // Set the table name for the Child entity
             modelBuilder.Entity<RestaurantTime>()
                 .ToContainer("RestaurantTime")
-                .HasPartitionKey(e=>e.Id); // Specify the table name
+                .HasPartitionKey(e=>e.Id)
+                .HasAlternateKey(x=>x.Id); // Specify the table name
 
             modelBuilder.Entity<Restaurant>()
                              .HasMany(p => p.restaurantTimes)
-                             .WithOne(c => c.Restaurant)
+                             .WithOne(c => c.Restaurant)                             
                              .HasForeignKey(c => c.RestaurantId);
-
-            //modelBuilder.Entity<Restaurant>().OwnsMany(p => p.restaurantTimes);
+   
         }
     }
 }
