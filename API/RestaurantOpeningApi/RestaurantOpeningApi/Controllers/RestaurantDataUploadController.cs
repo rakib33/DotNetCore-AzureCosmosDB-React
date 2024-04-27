@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
-using RestaurantOpeningApi.Repository;
 
 namespace RestaurantOpeningApi.Controllers
 {
@@ -17,13 +15,7 @@ namespace RestaurantOpeningApi.Controllers
             _dataService = dataService;     
             _restaurantService = restaurantService;
         }
-
-        //[HttpGet("ParseOperatingTime")]
-        //public async Task<IActionResult> OperatingTimeParse()
-        //{
-        //    IEnumerable<RestaurantTime> restaurants = await _restaurantTimeParser.ParseRestaurantOperatingTime("");
-        //    return Ok();
-        //}
+        
 
         [HttpPost("upload")]
         public async Task<IActionResult> UploadCsvFile(IFormFile file)

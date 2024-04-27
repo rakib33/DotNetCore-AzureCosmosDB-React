@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using RestaurantOpeningApi.DataContext;
 using RestaurantOpeningApi.Interfaces;
