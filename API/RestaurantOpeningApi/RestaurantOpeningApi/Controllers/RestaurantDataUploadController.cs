@@ -41,7 +41,7 @@ namespace RestaurantOpeningApi.Controllers
 
                 try
                 {                  
-                    await _restaurantService.AddListRestaurantAsync(restaurants);
+                    await _restaurantService.AddBulkRestaurantAsync(restaurants);
                     await _restaurantService.SaveChangesAsync();
                     return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
                 }

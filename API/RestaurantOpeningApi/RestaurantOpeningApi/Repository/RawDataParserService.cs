@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using RestaurantOpeningApi.Common;
 using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
@@ -24,14 +25,42 @@ namespace RestaurantOpeningApi.Repository
             await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
             {
 
-                records.Add(new Restaurant { 
-                  Id = Guid.NewGuid().ToString(),
-                  Name = record.RestaurantName,
-                  OperatingTime = record.OperatingHours,
-                });
+                var restaurant = new Restaurant
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Name = record.RestaurantName,
+                    OperatingTime = record.OperatingHours
+                };
+               
+                restaurant.restaurantTimes = await ParseRestaurantOperatingTime(record.OperatingHours, restaurant.Id);
+
+                records.Add(restaurant);
             }
 
             return records;
+        }
+
+        public async Task<List<RestaurantTime>> ParseRestaurantOperatingTime(string operatingTime, string restaurantId)
+        {
+            List<RestaurantTime> restaurantTimes = new List<RestaurantTime>();
+
+            foreach (var item in CommonManagement.ParseRestaurantTimeString(operatingTime))
+            {
+                TimeSpan totalTime = CommonManagement.GetTotalTimeDuration(item.OpeningTime,item.ClosingTime);
+                var restaurantTime = new RestaurantTime
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    RestaurantId = restaurantId,
+                    OpeningDay = item.OpeningDay,
+                    OpeningTime = item.OpeningTime,
+                    ClosingTime = item.ClosingTime,
+                    TotalTimeDuration = totalTime
+                };
+
+                restaurantTimes.Add(restaurantTime);
+            }
+
+            return restaurantTimes;
         }
 
     }

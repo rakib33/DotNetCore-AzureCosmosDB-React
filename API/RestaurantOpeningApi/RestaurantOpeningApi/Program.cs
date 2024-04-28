@@ -3,6 +3,7 @@ using RestaurantOpeningApi.DataContext;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Repository;
 using RestaurantOpeningApi.Services;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,16 +34,18 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IRawDataParser, RawDataParserService>();
 builder.Services.AddScoped<IRestaurantService, RestaurantRepoService>();
-
-//builder.Services.AddScoped<IRestaurantTimeParser, RestaurantTimeParser>();
-//builder.Services.AddScoped<IRestaurantTimeService, RestaurantTimeRepoService>();
-
-//builder.Services.AddScoped<RestaurantDataService>();
+builder.Services.AddScoped<IRestaurantTimeService, RestaurentTimeRepoService>();
+builder.Services.AddScoped<IRestaurantDataService, RestaurantDataService>();
 
 builder.Services.AddResponseCaching();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//possible object cycle avoiding 
+//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddControllers().AddJsonOptions(x =>
+   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
 var app = builder.Build();
 
