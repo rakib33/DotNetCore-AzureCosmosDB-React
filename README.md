@@ -519,7 +519,22 @@ For data upload from given csv file to database we need to parse the data and th
 - Open project src folder in vs code editor
   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/7cf14011-f9b9-41bc-8f49-43226b1f5a36)
   
-  
+# Basic structure
+
+ We now create some folder on app folder here. This is basic structure we are following .
+     - components       // Reusable UI components
+     - pages            // Components representing entire pages/views
+     - services         // Services for data manipulation, API calls, etc.
+     - models           // Data models/interfaces
+     - guards           // Route guards for authentication, authorization, etc.
+     - interceptors     // HTTP interceptors for global error handling, logging, etc.
+     - utils            // Utility functions
+     - shared           // Shared modules, directives, pipes, etc.
+     - core             // Core module (singleton services, app-wide imports, etc.)
+     - layouts          // Layout components (header, footer, sidebar, etc.)
+     - assets           // Static assets like images, fonts, etc.
+     - styles           // Global styles, CSS, SCSS files
+     
 ## References
 
 - https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
