@@ -129,6 +129,16 @@ namespace RestaurantOpeningApi.Common
 
         }
 
+        public static TimeSpan SetClosingTime(TimeSpan openTime, TimeSpan closingTime)
+        {
+            if (closingTime < openTime)
+            {
+                // Add 24 hours to the end time to make it on the same day
+                closingTime = closingTime.Add(new TimeSpan(24, 0, 0));
+            }
+
+            return closingTime;
+        }
         public static TimeSpan GetTotalTimeDuration(TimeSpan openTime, TimeSpan closingTime)
         {
             TimeSpan duration;
@@ -147,6 +157,21 @@ namespace RestaurantOpeningApi.Common
 
             return duration;
             
+        }
+
+        public static bool IsTimeOnDuration(TimeSpan time, TimeSpan openTime, TimeSpan closingTime)
+        {
+            TimeSpan duration;
+            //// If the end time is before the start time, it means it's on the next day
+            if (closingTime < openTime)           
+                // Add 24 hours to the end time to make it on the same day
+                closingTime = closingTime.Add(new TimeSpan(24, 0, 0));             
+            if(time < openTime)
+                time = time.Add(new TimeSpan(24, 0, 0));
+
+            if (time > openTime && time < closingTime)
+                return true;
+            else return false;
         }
 
     }

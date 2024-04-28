@@ -37,10 +37,9 @@ namespace RestaurantOpeningApi.Services
         {
             return await _restaurantService.GetAllRestaurantAsync(restaurantParameters);
 
-      //      return PagedList<Restaurant>.ToPagedList(await _restaurantService.GetAllRestaurantAsync().OrderBy(on => on.Name),
-      //ownerParameters.PageNumber,
-      //ownerParameters.PageSize);
-
+            //.Skip((page - 1) * pageSize)
+            //    .Take(pageSize)
+            //    .ToListAsync();
         }
     }
 }

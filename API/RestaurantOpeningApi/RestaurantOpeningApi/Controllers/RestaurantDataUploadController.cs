@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RestaurantOpeningApi.Common;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 
@@ -9,8 +11,8 @@ namespace RestaurantOpeningApi.Controllers
     public class RestaurantDataUploadController : ControllerBase
     {   
         private readonly IRawDataParser _dataService;
-        private readonly IRestaurantService _restaurantService;
-        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantService restaurantService)
+        private readonly IRestaurantDataService _restaurantService;
+        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantDataService restaurantService)
         {
             _dataService = dataService;     
             _restaurantService = restaurantService;
@@ -41,8 +43,7 @@ namespace RestaurantOpeningApi.Controllers
 
                 try
                 {                  
-                    await _restaurantService.AddBulkRestaurantAsync(restaurants);
-                    await _restaurantService.SaveChangesAsync();
+                    await _restaurantService.AddRestaurantBatchAsync(restaurants,100);   
                     return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
                 }
                 catch (Exception)
@@ -54,9 +55,29 @@ namespace RestaurantOpeningApi.Controllers
             {
                 return StatusCode(StatusCodes.Status404NotFound, "File don't have any data.");
             }
-
-            
           
+        }
+
+        [HttpGet("GetRestaurants")]
+        public async Task<ActionResult<IEnumerable<Restaurant>>> GetRestaurants(string name,string day,TimeSpan time, int page = 1, int pageSize = 50)
+        {
+            RestaurantParameters parms = new RestaurantParameters();
+            parms.Pagination.PageNumber = page;
+            parms.Pagination.PageSize = pageSize;
+            parms.name = name;
+            parms.day = day;
+            parms.time = time;
+
+            var items = await _restaurantService.GetRestaurantAsync(parms);
+
+            /*
+             .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+             */
+
+            return Ok(items);
         }
     }
 }

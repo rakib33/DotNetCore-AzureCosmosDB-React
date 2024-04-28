@@ -31,7 +31,7 @@ namespace RestaurantOpeningApi.Repository
                     Name = record.RestaurantName,
                     OperatingTime = record.OperatingHours
                 };
-               
+              
                 restaurant.restaurantTimes = await ParseRestaurantOperatingTime(record.OperatingHours, restaurant.Id);
 
                 records.Add(restaurant);
@@ -46,14 +46,17 @@ namespace RestaurantOpeningApi.Repository
 
             foreach (var item in CommonManagement.ParseRestaurantTimeString(operatingTime))
             {
-                TimeSpan totalTime = CommonManagement.GetTotalTimeDuration(item.OpeningTime,item.ClosingTime);
+                TimeSpan totalTime = CommonManagement.GetTotalTimeDuration(item.OpeningTime,item.ClosingTime);               
+            
+                TimeSpan closingTime = CommonManagement.SetClosingTime(item.OpeningTime, item.ClosingTime);
+               
                 var restaurantTime = new RestaurantTime
                 {
                     Id = Guid.NewGuid().ToString(),
                     RestaurantId = restaurantId,
                     OpeningDay = item.OpeningDay,
                     OpeningTime = item.OpeningTime,
-                    ClosingTime = item.ClosingTime,
+                    ClosingTime = closingTime,
                     TotalTimeDuration = totalTime
                 };
 
