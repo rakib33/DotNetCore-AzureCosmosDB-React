@@ -522,10 +522,11 @@ For data upload from given csv file to database we need to parse the data and th
 # Basic structure
 
  We now create some folder on app folder here. This is basic structure we are following .
-     - components       // Reusable UI components
-     - pages            // Components representing entire pages/views
-     - services         // Services for data manipulation, API calls, etc.
-     - models           // Data models/interfaces
+ 
+     - components       // Reusable UI components     
+     - pages            // Components representing entire pages/views     
+     - services         // Services for data manipulation, API calls, etc.     
+     - models           // Data models/interfaces     
      - guards           // Route guards for authentication, authorization, etc.
      - interceptors     // HTTP interceptors for global error handling, logging, etc.
      - utils            // Utility functions
