@@ -13,6 +13,16 @@ namespace RestaurantOpeningApi.Test.ServiceTest
 {
     public class DataUploadServiceTest
     {
+        private readonly Mock<IRestaurantService> _restaurantServiceMock;
+        private readonly RestaurantDataService _restaurantDataService;
+
+
+        public DataUploadServiceTest()
+        {
+            _restaurantServiceMock = new Mock<IRestaurantService>();
+            _restaurantDataService = new RestaurantDataService(_restaurantServiceMock.Object);
+        }
+
         [Fact]
         public async Task ProcessCsvFileAsync_CsvDataTest()
         {
@@ -32,27 +42,55 @@ namespace RestaurantOpeningApi.Test.ServiceTest
             Assert.Equal("Kushi Tsuru", data.First().Name);
             Assert.Equal("Mon-Sun 11:30 am - 9 pm", data.First().OperatingTime);
         }
+       
 
-        //[Fact]
-        //public async Task AddRestaurantBatchAsync_Should_Return_TimeSpan()
-        //{
-        //    // Arrange
-        //    var mockRestaurantService = new Mock<IRestaurantDataService>();
-        //    var restaurants = new List<Restaurant>
-        //    {
-        //        new Restaurant {Id ="1", Name = "Kushi Tsuru", OperatingTime ="Mon-Sun 11:30 am - 9 pm"}
-        //    };
-           
+        [Fact]
+        public async Task AddRestaurantBatchAsync_ReturnTimeSpan_NotZero()
+        {
+            // Arrange
+            var restaurants = new List<Restaurant>
+            {
+                new Restaurant {Id ="1", Name = "Kushi Tsuru", OperatingTime ="Mon-Sun 11:30 am - 9 pm"}
+            };
+            var batchSize = 10;           
 
-        //    int batchSize = 5;
-        //    var expectedTimeSpan = TimeSpan.FromSeconds(5); // Adjust according to your expected timing
+            // Act
+            var result = await _restaurantDataService.AddRestaurantBatchAsync(restaurants, batchSize);
 
-        //    mockRestaurantService.SetupSequence(x => x.AddRestaurantBatchAsync(It.IsAny<List<Restaurant>>(),batchSize))
-        //        .Returns((Task<TimeSpan>)Task.CompletedTask);
+            // Assert
+            Assert.NotEqual(TimeSpan.Zero, result);
+            // Add more assertions if needed
+        }
 
-        //    // Ensure that the Object property is not null
-        //    Assert.NotNull(mockRestaurantService.Object);
+        [Fact]
+        public async Task GetRestaurantAsync_ReturnListOfRestaurants()
+        {
+            // Arrange
+            var parameters = new RestaurantParameters
+            {
+                // Set your parameters here
+                // For example:
+                name = "Kushi Tsuru",
+                day = "Monday"
+            };
+            var expectedStudents = new List<Restaurant>
+            {
+                new Restaurant {Id ="1", Name = "Kushi Tsuru", OperatingTime ="Mon-Sun 11:30 am - 9 pm"}
+            };
 
-        //}
+
+            // var mockStudentService = new Mock<IStudentService>();
+            _restaurantServiceMock.Setup(x => x.GetAllRestaurantAsync(parameters))
+                              .ReturnsAsync(expectedStudents);
+
+
+
+            // Act
+            var result = await _restaurantDataService.GetRestaurantAsync(parameters);
+
+            // Assert
+            Assert.Equal(expectedStudents, result);
+        }
+
     }
 }

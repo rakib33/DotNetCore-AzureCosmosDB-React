@@ -9,6 +9,7 @@ using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace RestaurantOpeningApi.Test.ControllerTest
         }
 
         [Fact]
-        public async Task UploadCsvFile_WhenFileIsNull_ShouldReturnBadRequest()
+        public async Task UploadCsvFile_ReturnBadRequest_ForNullFile()
         {
             // Arrange           
             var nullFile = null as IFormFile;
@@ -63,7 +64,7 @@ namespace RestaurantOpeningApi.Test.ControllerTest
         }
 
         [Fact]
-        public async Task UploadCsvFile_WhenFileHasZeroLength_ShouldReturnBadRequest()
+        public async Task UploadCsvFile_ReturnBadRequest_ForZeroLengthFile()
         {
             // Arrange           
             var emptyFile = new FormFile(null, 0, 0, "file", "empty.csv");
@@ -76,5 +77,23 @@ namespace RestaurantOpeningApi.Test.ControllerTest
             Assert.Equal("No file uploaded.", badRequestResult.Value);
         }
 
+        [Fact]
+        public async Task UploadCsvFile_ReturnBadRequest_FileExtensionIsNotCsv()
+        {
+            // Arrange
+            // Creating a non-CSV file with some content
+            var csvContent = "Name, Age\nJohn Doe, 30\nJane Smith, 25";
+            var csvFile = new FormFile(new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(csvContent)), 0, csvContent.Length, "file", "data.txt");
+
+
+            // Act
+            var result = await _restaurantDataUploadController.UploadCsvFile(csvFile);
+
+            // Assert
+            var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+            Assert.Equal("Invalid file type. Only CSV files are allowed.", badRequestResult.Value);
+        }
+
+        
     }
 }

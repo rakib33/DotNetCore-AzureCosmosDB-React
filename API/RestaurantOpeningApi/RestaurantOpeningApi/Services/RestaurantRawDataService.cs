@@ -11,7 +11,7 @@ namespace RestaurantOpeningApi.Services
         private DateTime Start;
         private TimeSpan TimeSpan;
 
-        public RestaurantDataService( IRestaurantService restaurantService)
+        public RestaurantDataService(IRestaurantService restaurantService)
         {   
             _restaurantService = restaurantService;  
         }
