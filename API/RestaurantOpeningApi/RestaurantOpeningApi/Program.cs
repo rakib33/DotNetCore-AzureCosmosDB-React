@@ -18,16 +18,16 @@ builder.Services.AddDbContext<RestaurantContext>(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                 .AllowAnyMethod()
-                 .AllowAnyHeader();               
-        });
+    options.AddPolicy("AllowAngularOrigins",
+    builder =>
+    {
+        builder.WithOrigins(
+                            "http://localhost:4200"
+                            )
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+    });
 });
-
-
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -47,9 +47,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
+
+builder.Services.AddCors();
 var app = builder.Build();
-
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -62,11 +62,12 @@ if (!app.Environment.IsDevelopment())
     //app.UseExceptionHandler("/Error");
     //app.UseHsts();
 }
+//app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:7222/", "http://localhost:4200/", "http://192.168.18.254:4200/"));
+app.UseCors("AllowAngularOrigins");
+//app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
-app.UseCors("AllowAllOrigins"); 
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.Cosmos.Spatial;
 using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Models;
+using System;
 using System.Text.RegularExpressions;
 
 namespace RestaurantOpeningApi.Common
@@ -174,6 +175,13 @@ namespace RestaurantOpeningApi.Common
             else return false;
         }
 
+        public static TimeSpan GetTimeSpanFromString(string time)
+        {
+            // Parsing a TimeSpan from a string representation
+            TimeSpan span;
+           var parseTime =  TimeSpan.TryParse(time,out span);
+            return span;
+        }
     }
     }   
 

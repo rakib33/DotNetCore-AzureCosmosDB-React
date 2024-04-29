@@ -3,7 +3,7 @@
     public class Pagination
     {
             const int maxPageSize = 100;
-            public int PageNumber { get; set; } = 1;
+            public int Page { get; set; } = 1;
 
             private int _pageSize = 10;
             public int PageSize

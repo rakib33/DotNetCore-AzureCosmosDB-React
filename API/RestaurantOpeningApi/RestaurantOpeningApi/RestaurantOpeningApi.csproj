@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\**" />
-    <Content Remove="wwwroot\**" />
-    <EmbeddedResource Remove="wwwroot\**" />
-    <None Remove="wwwroot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Controllers\RestaurantDataController.cs" />
     <Compile Remove="Controllers\UsersController.cs" />
     <Compile Remove="Controllers\WeatherForecastController.cs" />
@@ -36,6 +29,19 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\restaurant-app\browser\main-N3LKBXUT.js" />
+    <None Include="wwwroot\restaurant-app\browser\polyfills-RT5I6R6G.js" />
+    <None Include="wwwroot\restaurant-app\server\chunk-4KTPBZTU.mjs" />
+    <None Include="wwwroot\restaurant-app\server\chunk-O73ZHKXN.mjs" />
+    <None Include="wwwroot\restaurant-app\server\chunk-VVCT4QZE.mjs" />
+    <None Include="wwwroot\restaurant-app\server\chunk-ZL4VPCOP.mjs" />
+    <None Include="wwwroot\restaurant-app\server\main.server.mjs" />
+    <None Include="wwwroot\restaurant-app\server\polyfills.server.mjs" />
+    <None Include="wwwroot\restaurant-app\server\render-utils.server.mjs" />
+    <None Include="wwwroot\restaurant-app\server\server.mjs" />
   </ItemGroup>
 
 </Project>

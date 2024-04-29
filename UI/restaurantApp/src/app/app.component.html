@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+
+<div class="card-body table-responsive">
+    <table class="table table-bordered table-hover" style="overflow-x: auto;">
+      <thead>
+          <tr>
+              <th></th>
+              <th>Restaurant Name</th>
+              <th>Operating Time</th>           
+          </tr>
+      </thead>
+      <tbody>          
+        @for(res of restaurants; track res.id){
+          <tr>             
+              <td>{{res.name}}</td>
+              <td>{{res.operatingTime}}</td>             
+          </tr>
+        }
+      </tbody>
+    </table>
+    </div>

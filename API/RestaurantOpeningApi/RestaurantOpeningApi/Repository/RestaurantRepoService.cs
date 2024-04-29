@@ -69,8 +69,8 @@ namespace RestaurantOpeningApi.Services
                 else
                     await _context.Entry(restaurant).Collection(p=>p.restaurantTimes).LoadAsync();
             }
-         
-            return restaurants;
+
+            return restaurants.Skip((p.Pagination.Page -1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
 
         }
 

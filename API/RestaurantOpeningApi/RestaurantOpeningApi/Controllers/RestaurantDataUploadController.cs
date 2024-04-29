@@ -59,25 +59,23 @@ namespace RestaurantOpeningApi.Controllers
         }
 
         [HttpGet("GetRestaurants")]
-        public async Task<ActionResult<IEnumerable<Restaurant>>> GetRestaurants(string name,string day,TimeSpan time, int page = 1, int pageSize = 50)
+        [ProducesResponseType(typeof(List<Restaurant>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetRestaurants(string name,string day,string time, int page = 1, int pageSize = 50)
         {
             RestaurantParameters parms = new RestaurantParameters();
-            parms.Pagination.PageNumber = page;
-            parms.Pagination.PageSize = pageSize;
+            Pagination pagination = new Pagination();
+            pagination.Page = 1;
+            pagination.PageSize = 50;
             parms.name = name;
             parms.day = day;
-            parms.time = time;
-
+            parms.time = CommonManagement.GetTimeSpanFromString(time);
+            parms.Pagination = pagination;
+        
             var items = await _restaurantService.GetRestaurantAsync(parms);
+            return Ok( items);
 
-            /*
-             .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
-             */
-
-            return Ok(items);
         }
+      
     }
 }

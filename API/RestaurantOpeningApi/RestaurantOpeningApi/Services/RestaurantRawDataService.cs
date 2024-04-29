@@ -36,10 +36,6 @@ namespace RestaurantOpeningApi.Services
         public async Task<List<Restaurant>> GetRestaurantAsync(RestaurantParameters restaurantParameters)
         {
             return await _restaurantService.GetAllRestaurantAsync(restaurantParameters);
-
-            //.Skip((page - 1) * pageSize)
-            //    .Take(pageSize)
-            //    .ToListAsync();
         }
     }
 }

@@ -1,4 +1,12 @@
-﻿using RestaurantOpeningApi.Repository;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos;
+using Moq;
+using RestaurantOpeningApi.Common;
+using RestaurantOpeningApi.Interfaces;
+using RestaurantOpeningApi.Models;
+using RestaurantOpeningApi.Repository;
+using RestaurantOpeningApi.Services;
+using System.Net.NetworkInformation;
 using Xunit;
 
 namespace RestaurantOpeningApi.Test.ServiceTest
@@ -24,6 +32,5 @@ namespace RestaurantOpeningApi.Test.ServiceTest
             Assert.Equal("Kushi Tsuru", data.First().Name);
             Assert.Equal("Mon-Sun 11:30 am - 9 pm", data.First().OperatingTime);
         }
-        
     }
 }
