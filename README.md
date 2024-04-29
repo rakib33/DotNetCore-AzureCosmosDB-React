@@ -827,11 +827,11 @@ For data upload from given csv file to database we need to parse the data and th
 
   6. Now from the bottom click Fine Code Coverage button. Covergae indicates the test coverage percentage.
 
-     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/3b277ab2-87b3-4825-ae65-3366a258621a)
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/e1320bcd-ac35-411e-85f4-32ce0f3940b0)
 
   7. We can check how many code is covered in summary section.
 
-      ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/b6231353-c9da-4d7e-a282-f4301e6a2f01)
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/7a164387-5991-4bba-a10b-671e725e8272)
 
   9. We can check the risk factor.
 
