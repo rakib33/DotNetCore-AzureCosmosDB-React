@@ -921,18 +921,4 @@ For data upload from given csv file to database we need to parse the data and th
     providers: [provideRouter(routes), provideClientHydration(),provideHttpClient(withFetch()),HttpClientModule]
   };
 
-   ```
-## ToDo Features
- 
- - Add filtering option on UI data table. Filer by name, day and given time span. Add ordering features on data table.
- - Add pagination on UI.
- - Cover all tested.
-   
-## References
-
-- https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
-- https://github.com/Azure/azure-cosmos-dotnet-v3
-- https://www.c-sharpcorner.com/article/angular-app-with-asp-net-core-and-cosmos-db/
-- https://www.codeproject.com/Articles/1256191/Angular-6-Application-with-Cosmos-DB-and-Web-API-2
-- https://www.c-sharpcorner.com/article/bulk-operations-in-entity-framework-core/
--https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
+ ```
