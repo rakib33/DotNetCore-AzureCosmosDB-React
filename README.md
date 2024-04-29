@@ -819,7 +819,22 @@ For data upload from given csv file to database we need to parse the data and th
       ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/f9520120-1cf3-4f41-b6d0-b34b2f03ba4d)
 
   3. Also can download from extension. Check this article https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
-  4. 
+  4. Run the test case.
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/cfaaca9e-7de2-4351-8c1b-51dddce913fd)
+
+  5. Now from the bottom click Fine Code Coverage button. Covergae indicates the test coverage percentage.
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/3b277ab2-87b3-4825-ae65-3366a258621a)
+
+  6. We can check how many code is covered in summary section.
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/b6231353-c9da-4d7e-a282-f4301e6a2f01)
+
+  7. We can check the risk factor.
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/addf4232-f43e-4500-aa5a-e2c3f8f30b95)
+
+  8. Coverage log
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/057a9625-6b99-4d60-b0e9-53a193964c75)
+ 
+
 
 ## Create Angular App
 
