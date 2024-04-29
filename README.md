@@ -909,16 +909,16 @@ For data upload from given csv file to database we need to parse the data and th
 
  - Add HttpClient provider on app.config.ts file
 
-   ```
-  import { ApplicationConfig } from '@angular/core';
-  import { provideRouter } from '@angular/router';
-  
-  import { routes } from './app.routes';
-  import { provideClientHydration } from '@angular/platform-browser';
-  import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
-  
-  export const appConfig: ApplicationConfig = {
-    providers: [provideRouter(routes), provideClientHydration(),provideHttpClient(withFetch()),HttpClientModule]
-  };
+  ```
+    import { ApplicationConfig } from '@angular/core';
+    import { provideRouter } from '@angular/router';
+    
+    import { routes } from './app.routes';
+    import { provideClientHydration } from '@angular/platform-browser';
+    import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+    
+    export const appConfig: ApplicationConfig = {
+      providers: [provideRouter(routes), provideClientHydration(),provideHttpClient(withFetch()),HttpClientModule]
+    };
 
  ```
