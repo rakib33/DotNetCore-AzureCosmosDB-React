@@ -815,9 +815,11 @@ For data upload from given csv file to database we need to parse the data and th
 
   1. Download [(Fine Code Coverage)https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage2022]
   2. Install FineCodeCoverage2022.vsix
-     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/f9520120-1cf3-4f41-b6d0-b34b2f03ba4d)
 
-  3. 
+      ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/f9520120-1cf3-4f41-b6d0-b34b2f03ba4d)
+
+  3. Also can download from extension. Check this article https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
+  4. 
 
 ## Create Angular App
 
@@ -836,7 +838,8 @@ For data upload from given csv file to database we need to parse the data and th
   code .
   ```
 - Open project src folder in vs code editor
-  ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/7cf14011-f9b9-41bc-8f49-43226b1f5a36)
+
+   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/7cf14011-f9b9-41bc-8f49-43226b1f5a36)
   
 # Basic structure
 
@@ -854,7 +857,14 @@ For data upload from given csv file to database we need to parse the data and th
      - layouts          // Layout components (header, footer, sidebar, etc.)
      - assets           // Static assets like images, fonts, etc.
      - styles           // Global styles, CSS, SCSS files
-     
+
+
+## ToDo Features
+ 
+ - Add filtering option on UI data table. Filer by name, day and given time span. Add ordering features on data table.
+ - Add pagination on UI.
+ - Cover all tested.
+   
 ## References
 
 - https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app
@@ -862,3 +872,4 @@ For data upload from given csv file to database we need to parse the data and th
 - https://www.c-sharpcorner.com/article/angular-app-with-asp-net-core-and-cosmos-db/
 - https://www.codeproject.com/Articles/1256191/Angular-6-Application-with-Cosmos-DB-and-Web-API-2
 - https://www.c-sharpcorner.com/article/bulk-operations-in-entity-framework-core/
+-https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
