@@ -827,11 +827,11 @@ For data upload from given csv file to database we need to parse the data and th
 
   6. Now from the bottom click Fine Code Coverage button. Covergae indicates the test coverage percentage.
 
-     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/e1320bcd-ac35-411e-85f4-32ce0f3940b0)
+    ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/eecfccd7-7035-45f1-9adb-0c92d9df5661)
 
   7. We can check how many code is covered in summary section.
 
-     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/7a164387-5991-4bba-a10b-671e725e8272)
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/d462482c-1491-4e49-925c-66234c1c01b9)
 
   9. We can check the risk factor.
 
@@ -946,9 +946,9 @@ For data upload from given csv file to database we need to parse the data and th
  ```
 ## ToDo Features
  
- - Add filtering option on UI data table. Filer by name, day and given time span. Add ordering features on data table.
+ - Add filtering option on UI data table. Filter by name, day and given time span. Add ordering features on data table.
  - Add pagination on UI.
- - Cover all tested.
+ - Cover the pending testcase.
    
 ## References
 
@@ -957,4 +957,4 @@ For data upload from given csv file to database we need to parse the data and th
 - https://www.c-sharpcorner.com/article/angular-app-with-asp-net-core-and-cosmos-db/
 - https://www.codeproject.com/Articles/1256191/Angular-6-Application-with-Cosmos-DB-and-Web-API-2
 - https://www.c-sharpcorner.com/article/bulk-operations-in-entity-framework-core/
--https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
+- https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
