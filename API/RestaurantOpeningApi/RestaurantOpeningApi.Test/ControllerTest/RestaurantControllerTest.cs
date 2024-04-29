@@ -1,5 +1,10 @@
-﻿using Moq;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos;
+using Microsoft.Extensions.Logging;
+using Moq;
 using RestaurantOpeningApi.Common;
+using RestaurantOpeningApi.Controllers;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 using System;
@@ -13,38 +18,63 @@ namespace RestaurantOpeningApi.Test.ControllerTest
 {
     public class RestaurantControllerTest
     {
-        //[Fact]
-        //public async void RestaurantController_GetRestaurants_Test()
-        //{
-        //    //Arrange
-        //    var mockRestaurantService = new Mock<IRestaurantDataService>();
-        //    var parameters = new RestaurantParameters();
-        //    parameters.Pagination.Page = 1;
-        //    parameters.Pagination.PageSize = 10;
+        private readonly RestaurantDataUploadController _restaurantDataUploadController;
+        private readonly Mock<IRawDataParser> _dataService;
+        private readonly Mock<IRestaurantDataService> _restaurantService;
+        public RestaurantControllerTest()
+        {
+            _dataService = new Mock<IRawDataParser>();
+            _restaurantService = new Mock<IRestaurantDataService>();
+            _restaurantDataUploadController = new RestaurantDataUploadController(_dataService.Object,_restaurantService.Object);
+        }
 
-        //    //mock the get GetRestaurantAsync method to return a list of restaurant
-        //    var restaurants = new List<Restaurant>
-        //    {
-        //        new Restaurant {Id ="1", Name="Kushi Tsuru", OperatingTime="Mon-Sun 11:30 am - 9 pm",
-        //            restaurantTimes = new List<RestaurantTime>{
-        //                new RestaurantTime {
-        //                    Id="1",
-        //                    OpeningDay = "Monday",
-        //                    OpeningTime=CommonManagement.GetTimeSpanFromString("11:30:00"),
-        //                    ClosingTime=CommonManagement.GetTimeSpanFromString("09:30:00"),
-        //                    RestaurantId ="1"},
-        //                 new RestaurantTime {
-        //                    Id="2",
-        //                    OpeningDay = "Tuesday",
-        //                    OpeningTime=CommonManagement.GetTimeSpanFromString("11:30:00"),
-        //                    ClosingTime=CommonManagement.GetTimeSpanFromString("09:30:00"),
-        //                    RestaurantId ="1"}
-        //        } },
+        [Fact]
+        public void GetRestaurants_ReturnIActionResult()
+        {
+            //Arrange
+            var ExpectedResut = new List<Restaurant> { };
+            //act
+            var result = _restaurantDataUploadController.GetRestaurants("","","");
+            //assert
+            Assert.NotNull(result);
+            //assert
+            Assert.IsAssignableFrom<Task<IActionResult>>(result);
+        }
 
-        //    };
+        [Fact]
+        public void UploadCsvFile_ReturnIActionResult()
+        {
+            var csvData = "\"Kushi Tsuru\",\"Mon-Sun 11:30 am - 9 pm\"\n\"Osakaya Restaurant\",\"Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm\"";
+            using var memoryStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(csvData));
 
-        //    mockRestaurantService.Setup(s => s.GetRestaurantAsync(parameters)).ReturnsAsync(restaurants);
-        //    var RestaurantDataService = new IRestaurantDataService(mockRestaurantService.Object);
-        //}
+        }
+
+        [Fact]
+        public async Task UploadCsvFile_WhenFileIsNull_ShouldReturnBadRequest()
+        {
+            // Arrange           
+            var nullFile = null as IFormFile;
+            // Act
+            var result = await _restaurantDataUploadController.UploadCsvFile(nullFile);
+
+            // Assert
+            var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+            Assert.Equal("No file uploaded.", badRequestResult.Value);
+        }
+
+        [Fact]
+        public async Task UploadCsvFile_WhenFileHasZeroLength_ShouldReturnBadRequest()
+        {
+            // Arrange           
+            var emptyFile = new FormFile(null, 0, 0, "file", "empty.csv");
+
+            // Act
+            var result = await _restaurantDataUploadController.UploadCsvFile(emptyFile);
+
+            // Assert
+            var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+            Assert.Equal("No file uploaded.", badRequestResult.Value);
+        }
+
     }
 }

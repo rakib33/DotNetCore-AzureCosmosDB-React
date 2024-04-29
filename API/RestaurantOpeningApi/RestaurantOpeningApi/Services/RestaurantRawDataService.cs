@@ -7,15 +7,13 @@ namespace RestaurantOpeningApi.Services
     public class RestaurantDataService : IRestaurantDataService
     {
       
-        private readonly IRestaurantService _restaurantService;
-        private readonly IRestaurantTimeService _restaurantTimeService;
+        private readonly IRestaurantService _restaurantService;       
         private DateTime Start;
         private TimeSpan TimeSpan;
 
-        public RestaurantDataService( IRestaurantService restaurantService, IRestaurantTimeService restaurantTimeService)
+        public RestaurantDataService( IRestaurantService restaurantService)
         {   
-            _restaurantService = restaurantService;          
-            _restaurantTimeService = restaurantTimeService;
+            _restaurantService = restaurantService;  
         }
 
         public async Task<TimeSpan> AddRestaurantBatchAsync(List<Restaurant> restaurants, int batchSize)
