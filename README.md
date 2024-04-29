@@ -858,7 +858,70 @@ For data upload from given csv file to database we need to parse the data and th
      - assets           // Static assets like images, fonts, etc.
      - styles           // Global styles, CSS, SCSS files
 
+ - In app.component.ts call the api now. We will create service for api calling lather.
 
+  ```
+  import { HttpClient ,HttpClientModule } from '@angular/common/http';
+  import { Component, OnInit } from '@angular/core';
+  import { RouterOutlet } from '@angular/router';
+  import { error } from 'console';
+  import { response } from 'express';
+  
+  @Component({
+    selector: 'app-root',
+    standalone: true,
+    imports: [RouterOutlet],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
+  })
+  export class AppComponent implements OnInit{
+    title = 'Restaurant App';
+    restaurants: any;
+    
+    constructor(private http: HttpClient){}
+    ngOnInit(): void {
+     //this.getRestaurants();
+     this.getAllRestaurants();
+    }
+  
+    getAllRestaurants(): void {
+  
+      // Make the HTTP GET request
+      //?name=${this.restaurantName}&day=${this.day}&time=${this.time}&page=${this.currentPage}&pageSize=${this.ItemPerPage}
+      this.http.get<any>("https://localhost:7222/api/RestaurantDataUpload/GetRestaurants?name=''&day=''&time=''&page=1&pageSize=50")
+        .subscribe(
+          (response) => {
+            // Handle the response data
+            console.log('response :'+response);
+            this.restaurants = response.data;
+            console.log('response data :'+ this.restaurants);
+          },
+          (error) => {
+            // Handle errors
+            console.error('Error fetching restaurants:', error);
+          }
+        );
+    }
+  
+  }
+
+  ```
+
+ - Add HttpClient provider on app.config.ts file
+
+   ```
+  import { ApplicationConfig } from '@angular/core';
+  import { provideRouter } from '@angular/router';
+  
+  import { routes } from './app.routes';
+  import { provideClientHydration } from '@angular/platform-browser';
+  import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+  
+  export const appConfig: ApplicationConfig = {
+    providers: [provideRouter(routes), provideClientHydration(),provideHttpClient(withFetch()),HttpClientModule]
+  };
+
+   ```
 ## ToDo Features
  
  - Add filtering option on UI data table. Filer by name, day and given time span. Add ordering features on data table.
