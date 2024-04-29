@@ -509,77 +509,183 @@ For data upload from given csv file to database we need to parse the data and th
       }   
 
   ```
+
 - Now we need to inject this service to our project in Program.cs file. Open the file and put this line of code.
 
   ```    
+  // Add services to the container.
+  builder.Services.AddControllers();
+  
   builder.Services.AddScoped<IRawDataParser, RawDataParserService>();
   builder.Services.AddScoped<IRestaurantService, RestaurantRepoService>();
+  builder.Services.AddScoped<IRestaurantTimeService, RestaurentTimeRepoService>();
+  builder.Services.AddScoped<IRestaurantDataService, RestaurantDataService>();
   ```
-- Create a web api controller in Controllers folder named RestaurantDataController.cs to upload csv file
+- Enable cors for this project. Add those in program.cs file.
+  ```
+  builder.Services.AddCors(options =>
+  {
+      options.AddPolicy("AllowAngularOrigins",
+      builder =>
+      {
+          builder.WithOrigins(
+                              "http://localhost:4200"
+                              )
+                              .AllowAnyHeader()
+                              .AllowAnyMethod();
+      });
+  });
+
+  ....
+  ....
+
+  builder.Services.AddCors();
+  var app = builder.Build();
+  ....
+  ....
+  app.UseCors("AllowAngularOrigins");
+  
+  app.UseHttpsRedirection();
+  app.UseRouting();
+  app.UseAuthorization();
+  app.MapControllers();
+  app.Run();
+  ```
+- Create a service RestaurantDataService under RestaurantRawDataService.cs file from Services folder. We will save our restaurant data from csv file after parsing.
 
   ```
-    using Microsoft.AspNetCore.Mvc;
-    using RestaurantOpeningApi.Interfaces;
-    using RestaurantOpeningApi.Models;
-    
-    namespace RestaurantOpeningApi.Controllers
-    {
-        [Route("api/[controller]")]
-        [ApiController]
-        public class RestaurantDataUploadController : ControllerBase
-        {   
-            private readonly IRawDataParser _dataService;
-            private readonly IRestaurantService _restaurantService;
-            public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantService restaurantService)
-            {
-                _dataService = dataService;     
-                _restaurantService = restaurantService;
-            }
+  using RestaurantOpeningApi.Common;
+  using RestaurantOpeningApi.Interfaces;
+  using RestaurantOpeningApi.Models;
+  
+  namespace RestaurantOpeningApi.Services
+  {
+      public class RestaurantDataService : IRestaurantDataService
+      {
+        
+          private readonly IRestaurantService _restaurantService;
+          private readonly IRestaurantTimeService _restaurantTimeService;
+          private DateTime Start;
+          private TimeSpan TimeSpan;
+  
+          public RestaurantDataService( IRestaurantService restaurantService, IRestaurantTimeService restaurantTimeService)
+          {   
+              _restaurantService = restaurantService;          
+              _restaurantTimeService = restaurantTimeService;
+          }
+  
+          public async Task<TimeSpan> AddRestaurantBatchAsync(List<Restaurant> restaurants, int batchSize)
+          {
+              Start = DateTime.Now;
+  
+              for (int i = 0; i < restaurants.Count; i += batchSize)
+              {
+                  List<Restaurant> batch = restaurants.Skip(i).Take(batchSize).ToList();
+                  await _restaurantService.AddBulkRestaurantAsync(batch);
+                  await _restaurantService.SaveChangesAsync();
+              }
+              
+              TimeSpan = DateTime.Now - Start;
+              return TimeSpan;
+          }
+  
+          public async Task<List<Restaurant>> GetRestaurantAsync(RestaurantParameters restaurantParameters)
+          {
+              return await _restaurantService.GetAllRestaurantAsync(restaurantParameters);
+          }
+      }
+  }
+
+  ``` 
+   
+- Now Create a web api controller in Controllers folder named RestaurantDataController.cs to upload csv file data on cosmos database using RestaurantDataService.
+  
+  ```
+  using Microsoft.AspNetCore.Mvc;
+  using Microsoft.EntityFrameworkCore;
+  using RestaurantOpeningApi.Common;
+  using RestaurantOpeningApi.Interfaces;
+  using RestaurantOpeningApi.Models;
+  
+  namespace RestaurantOpeningApi.Controllers
+  {
+      [Route("api/[controller]")]
+      [ApiController]
+      public class RestaurantDataUploadController : ControllerBase
+      {   
+          private readonly IRawDataParser _dataService;
+          private readonly IRestaurantDataService _restaurantService;
+          public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantDataService restaurantService)
+          {
+              _dataService = dataService;     
+              _restaurantService = restaurantService;
+          }
+          
+  
+          [HttpPost("upload")]
+          public async Task<IActionResult> UploadCsvFile(IFormFile file)
+          {
+              if (file == null || file.Length == 0)
+              {
+                  return BadRequest("No file uploaded.");
+              }
+  
+              // Check the file extension
+              var extension = Path.GetExtension(file.FileName).ToLower();
+              if (extension != ".csv")
+              {
+                  return BadRequest("Invalid file type. Only CSV files are allowed.");
+              }
+  
+              using var fileStream = file.OpenReadStream();
+              List<Restaurant> restaurants = await _dataService.ProcessCsvFileAsync(fileStream);
+  
+              if (restaurants.Count() > 0)
+              {
+                  // process this data and save to database                
+  
+                  try
+                  {                  
+                      await _restaurantService.AddRestaurantBatchAsync(restaurants,100);   
+                      return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
+                  }
+                  catch (Exception)
+                  {
+                      return StatusCode(StatusCodes.Status500InternalServerError, "Data uploaded failed.");
+                  }
+              }
+              else
+              {
+                  return StatusCode(StatusCodes.Status404NotFound, "File don't have any data.");
+              }
             
-    
-            [HttpPost("upload")]
-            public async Task<IActionResult> UploadCsvFile(IFormFile file)
-            {
-                if (file == null || file.Length == 0)
-                {
-                    return BadRequest("No file uploaded.");
-                }
-    
-                // Check the file extension
-                var extension = Path.GetExtension(file.FileName).ToLower();
-                if (extension != ".csv")
-                {
-                    return BadRequest("Invalid file type. Only CSV files are allowed.");
-                }
-    
-                using var fileStream = file.OpenReadStream();
-                List<Restaurant> restaurants = await _dataService.ProcessCsvFileAsync(fileStream);
-    
-                if (restaurants.Count() > 0)
-                {
-                    // process this data and save to database                
-    
-                    try
-                    {                  
-                        await _restaurantService.AddListRestaurantAsync(restaurants);
-                        await _restaurantService.SaveChangesAsync();
-                        return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
-                    }
-                    catch (Exception)
-                    {
-                        return StatusCode(StatusCodes.Status500InternalServerError, "Data uploaded failed.");
-                    }
-                }
-                else
-                {
-                    return StatusCode(StatusCodes.Status404NotFound, "File don't have any data.");
-                }                  
-            }
-        }
-    }
+          }
+  
+          [HttpGet("GetRestaurants")]
+          [ProducesResponseType(typeof(List<Restaurant>), StatusCodes.Status200OK)]
+          [ProducesResponseType(StatusCodes.Status404NotFound)]
+          public async Task<IActionResult> GetRestaurants(string name,string day,string time, int page = 1, int pageSize = 50)
+          {
+              RestaurantParameters parms = new RestaurantParameters();
+              Pagination pagination = new Pagination();
+              pagination.Page = 1;
+              pagination.PageSize = 50;
+              parms.name = name;
+              parms.day = day;
+              parms.time = CommonManagement.GetTimeSpanFromString(time);
+              parms.Pagination = pagination;
+          
+              var items = await _restaurantService.GetRestaurantAsync(parms);
+              return Ok( items);
+  
+          }
+        
+      }
+  }
 
   ```
-- Now we need to create a Database in azure cosmos DB . Though we want not to create in azure portal that is needed payment credit card info. We will use azure cosmos db emulator that 
+- Now we need to create a Database in azure cosmos DB . Though we want not to create in azure portal that is needed payment credit card info. We will use azure 
+  cosmos db emulator that 
   is as same as azure portal. After installing the emultor run this. 
 
   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/9b1d0e6e-b36a-4bf4-ad68-37d6598a6ea2)
@@ -660,52 +766,7 @@ For data upload from given csv file to database we need to parse the data and th
 - Now open cosmos explorer and check the data are saved.
   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/3ee38bf9-a55f-424f-8abc-03c8c0fd6c5b)
 
-## Parsing OperatingTime
 
-- We need to do parsing OperatingTime and insert into child table RestaurantTime.So we need to refactor our avobe code after parsing operating time.We are now create an parser algorithm 
-  using regular expression.
-- Create a class CommonManagement.cs under Common folder. And create a method ParseOperatingDayAndTime.
-
-   ```
-  public static Dictionary<string, string> ParseOperatingDayAndTime(string schedule)
-    {
-        // Initialize a dictionary to hold the parsed data
-        var scheduleDict = new Dictionary<string, string>();
-
-        // Regular expression to match day ranges and time ranges
-        string pattern = @"((?:[A-Za-z]+(?:[,\s*-][A-Za-z]+)?(?:,\s*)?)+)\s+(\d{1,2}\s+[ap]m\s+-\s+\d{1,2}:\d{2}\s+[ap]m)";
-  
-        // Find matches in the schedule string
-        var matches = Regex.Matches(schedule, pattern);
-
-        if (matches.Count() != 0)
-        {
-            foreach (Match match in matches)
-            {
-                // Extract the day and time range from the match
-                string days = match.Groups[1].Value.Trim();
-                string timeRange = match.Groups[2].Value.Trim();
-
-                // Split the days part by commas to handle multiple day ranges
-                var dayRanges = days.Split(',');
-
-                foreach (var dayRange in dayRanges)
-                {
-                    // Trim the day range and add it to the dictionary
-                    string trimmedDayRange = dayRange.Trim();
-                    scheduleDict[trimmedDayRange] = timeRange;
-                }
-            }
-        }
-        else
-        {
-            scheduleDict[schedule] = schedule;
-        }
-        
-
-        return scheduleDict;
-    }
-  ```
 ## Unit Testing 
 
 - Create a xUnit test project named RestaurantOpeningApi.Test
@@ -747,7 +808,16 @@ For data upload from given csv file to database we need to parse the data and th
 - Run the test cases.
   ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/846e1847-a5a4-4394-8b8d-4ad962757424)
 
-  
+## Test Coverage
+
+- Add  Test coverage.We are using a free tools for test coverage of this application. This test report shows us how many code are testable , how many code are passed 
+  the test or failed or not covered .
+
+  1. Download [(Fine Code Coverage)https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage2022]
+  2. Install FineCodeCoverage2022.vsix
+     ![image](https://github.com/rakib33/rakibul-islam-backend-test-21April2024/assets/10026710/f9520120-1cf3-4f41-b6d0-b34b2f03ba4d)
+
+  3. 
 
 ## Create Angular App
 
