@@ -109,31 +109,31 @@ For data upload from given csv file to database we need to parse the data and th
   ```
 - Now we also create another class named RestaurantTime.cs. This is child property we will save restaurant opening day and opening time and closing time also.
   ```
-  public class RestaurantTime
-  {
-      [Key]     
-      public string Id { get; set; }
+   public class RestaurantTime
+    {
+        [Key]     
+        public string Id { get; set; }
 
+        [Required]
+        [MaxLength(15)]
+        [Display(Name = "Opening Day")]
+        public string OpeningDay { get; set; }
 
-      [Required]
-      [MaxLength(15)]
-      [Display(Name = "Opening Day")]
-      public string OpeningDay { get; set; }
+        [Required]
+        [Display(Name = "Opening Time")]
+        public TimeSpan OpeningTime { get; set; }
 
-      [Required]
-      [Display(Name = "Opening Time")]
-      public TimeOnly OpeningTime { get; set; }
+        [Required]
+        [Display(Name = "Closing Time")]
+        public TimeSpan ClosingTime { get; set; }
+        public TimeSpan TotalTimeDuration { get; set; }
 
-      [Required]
-      [Display(Name = "Closing Time")]
-      public TimeOnly ClosingTime { get; set; }
+        //Foreign key referencing the Restaurant table as parent
+        public string RestaurantId { get; set; }
 
-      //Foreign key referencing the Restaurant table as parent
-      public string RestaurantId { get; set; }
-
-      //Navigation property for Restaurant
-      public Restaurant Restaurant { get; set; }
-  }
+        //Navigation property for Restaurant
+        public Restaurant Restaurant { get; set; }
+    }
   ```
 - Create a folder name Interfaces and create an Interface class IRawDataParser.cs
 
@@ -142,24 +142,23 @@ For data upload from given csv file to database we need to parse the data and th
 
   namespace RestaurantOpeningApi.Interfaces
   {
-      public interface IRawDataParser
-      {
-          Task<IEnumerable<Restaurant>> ProcessCsvFileAsync(Stream fileStream);
-      }
+    public interface IRawDataParser
+    {
+        Task<List<Restaurant>> ProcessCsvFileAsync(Stream fileStream);
+        Task<List<RestaurantTime>> ParseRestaurantOperatingTime(string operatingTime, string restaurantId);
+    }
   }
   ```
 - Create another interface IRestaurantService.cs
 
 ```
-  public interface IRestaurantService
-  {
-      Task<List<Restaurant>> GetAllRestaurantAsync();
-      Task AddRestaurantAsync(Restaurant restaurant);      
-      Task AddListRestaurantAsync(List<Restaurant> restaurant);      
-      void DeleteAsync(string id);
-      Task SaveChangesAsync();
-
-  }
+ public interface IRestaurantService
+    {
+        Task<List<Restaurant>> GetAllRestaurantAsync(RestaurantParameters restaurantParameters);      
+        Task AddBulkRestaurantAsync(List<Restaurant> restaurant);      
+        void DeleteAsync(string id);
+        Task SaveChangesAsync();
+    }
 ```
 
 - Create a folder Repository and implement this interface . Create implementing class RawDataParserService.cs
@@ -167,99 +166,349 @@ For data upload from given csv file to database we need to parse the data and th
   ```
   using CsvHelper;
   using CsvHelper.Configuration;
+  using RestaurantOpeningApi.Common;
   using RestaurantOpeningApi.DTOs;
   using RestaurantOpeningApi.Interfaces;
+  using RestaurantOpeningApi.Models;
   
   namespace RestaurantOpeningApi.Repository
   {
-   public class RawDataParserService : IRawDataParser
-    {
-       public async Task<IEnumerable<Restaurant>> ProcessCsvFileAsync(Stream fileStream)
-       {
-           var configuration = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
-           {
-               //set to false because the CSV file does not have a header record.
-               HasHeaderRecord = false,
-           };
+      public class RawDataParserService : IRawDataParser
+      {
+          public async Task<List<Restaurant>> ProcessCsvFileAsync(Stream fileStream)
+          {
+              var configuration = new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
+              {
+                  //set to false because the CSV file does not have a header record.
+                  HasHeaderRecord = false,
+              };
+  
+              using var reader = new StreamReader(fileStream);
+              using var csv = new CsvReader(reader, configuration);
+  
+              var records = new List<Restaurant>();
+  
+              await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
+              {
+  
+                  var restaurant = new Restaurant
+                  {
+                      Id = Guid.NewGuid().ToString(),
+                      Name = record.RestaurantName,
+                      OperatingTime = record.OperatingHours
+                  };
+                
+                  restaurant.restaurantTimes = await ParseRestaurantOperatingTime(record.OperatingHours, restaurant.Id);
+  
+                  records.Add(restaurant);
+              }
+  
+              return records;
+          }
+  
+          public async Task<List<RestaurantTime>> ParseRestaurantOperatingTime(string operatingTime, string restaurantId)
+          {
+              List<RestaurantTime> restaurantTimes = new List<RestaurantTime>();
+  
+              foreach (var item in CommonManagement.ParseRestaurantTimeString(operatingTime))
+              {
+                  TimeSpan totalTime = CommonManagement.GetTotalTimeDuration(item.OpeningTime,item.ClosingTime);               
+              
+                  TimeSpan closingTime = CommonManagement.SetClosingTime(item.OpeningTime, item.ClosingTime);
+                 
+                  var restaurantTime = new RestaurantTime
+                  {
+                      Id = Guid.NewGuid().ToString(),
+                      RestaurantId = restaurantId,
+                      OpeningDay = item.OpeningDay,
+                      OpeningTime = item.OpeningTime,
+                      ClosingTime = closingTime,
+                      TotalTimeDuration = totalTime
+                  };
+  
+                  restaurantTimes.Add(restaurantTime);
+              }
+  
+              return restaurantTimes;
+          }
+  
+      }
+  }    
+  ```
 
-           using var reader = new StreamReader(fileStream);
-           using var csv = new CsvReader(reader, configuration);
+- For RestaurantRepoService  that implememnt IRestaurantService
 
-           var records = new List<Restaurant>();
-
-           await foreach (var record in csv.GetRecordsAsync<RestaurantRawData>())
-           {
-
-               records.Add(new Restaurant { 
-                 Id = Guid.NewGuid().ToString(),
-                 Name = record.RestaurantName,
-                 OperatingTime = record.OperatingHours,
-               });
-           }
-
-           return records;
-       }
-    }
+  ```
+  using Microsoft.AspNetCore.Mvc;
+  using Microsoft.Azure.Cosmos;
+  using Microsoft.EntityFrameworkCore;
+  using RestaurantOpeningApi.Common;
+  using RestaurantOpeningApi.DataContext;
+  using RestaurantOpeningApi.Interfaces;
+  using RestaurantOpeningApi.Models;
+  
+  
+  namespace RestaurantOpeningApi.Services
+  {
+      public class RestaurantRepoService : IRestaurantService
+      {
+          RestaurantContext _context;
+          public RestaurantRepoService(RestaurantContext restaurantContext)
+          {
+              _context = restaurantContext;
+          }
+  
+          public async Task AddBulkRestaurantAsync(List<Restaurant> restaurant)
+          {         
+              await  _context.Restaurants.AddRangeAsync(restaurant);              
+          }
+  
+          public async Task AddRestaurantAsync(Restaurant restaurant)
+          {
+              try
+              {
+                  //disable change tracker
+                  _context.ChangeTracker.AutoDetectChangesEnabled = false;
+                  //new entities and  don't exist in the database , So apply AsNoTracking to prevent EF Core from tracking them.This improve speed.
+                  _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+                 await _context.Restaurants.AddAsync(restaurant);                
+              }
+              catch (Exception)
+              {
+                  throw;
+              }
+          }
+  
+          public void DeleteAsync(string id)
+          {
+              var restaurant =  _context.Restaurants.Where(t=>t.Id == id).FirstOrDefault();
+              if (restaurant != null)
+              {
+                  _context.Restaurants.Remove(restaurant);
+              }
+          }
+  
+          
+          public async Task<List<Restaurant>> GetAllRestaurantAsync(RestaurantParameters p)
+          {
+  
+             var query =  _context.Restaurants.AsQueryable();
+              
+              //Apply filtering 
+              if (!string.IsNullOrEmpty(p.name))
+                  query = query.Where(s => s.Name.Contains(p.name));
+             
+              List<Restaurant> restaurants = await query.ToListAsync();
+              //Explicit Loading
+              foreach (var restaurant in restaurants)
+              {
+                  if (!string.IsNullOrEmpty(p.day))
+                      await _context.Entry(restaurant).Collection(s => s.restaurantTimes.Where(c=>c.OpeningDay.Contains(p.day))).LoadAsync();
+  
+                  if (p.time != null)
+                      await _context.Entry(restaurant).Collection(s => s.restaurantTimes.Where(c => p.time <= c.ClosingTime && p.time >= c.OpeningTime)).LoadAsync();
+                  else
+                      await _context.Entry(restaurant).Collection(p=>p.restaurantTimes).LoadAsync();
+              }
+  
+              return restaurants.Skip((p.Pagination.Page -1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
+  
+          }
+  
+          public async Task SaveChangesAsync()
+          {
+              await _context.SaveChangesAsync();
+          }
+  
+     
+      }
   }
-
-    
-  ```
-- For IRestaurantService 
-  ```
-   public class RestaurantRepoService : IRestaurantService
-   {
-       RestaurantContext _context;
-       public RestaurantRepoService(RestaurantContext restaurantContext)
-       {
-           _context = restaurantContext;
-       }
   
-       public async Task AddListRestaurantAsync(List<Restaurant> restaurant)
-       {
-           try
-           {
-             await  _context.Restaurants.AddRangeAsync(restaurant);
-           }
-           catch (Exception)
-           {
-               throw;
-           }
-       }
-  
-       public async Task AddRestaurantAsync(Restaurant restaurant)
-       {
-           try
-           {
-              await _context.Restaurants.AddAsync(restaurant);                
-           }
-           catch (Exception)
-           {
-               throw;
-           }
-       }
-  
-       public void DeleteAsync(string id)
-       {
-           var restaurant =  _context.Restaurants.Where(t=>t.Id == id).FirstOrDefault();
-           if (restaurant != null)
-           {
-               _context.Restaurants.Remove(restaurant);
-           }
-       }
-  
-       public Task<List<Restaurant>> GetAllRestaurantAsync()
-       {
-           throw new NotImplementedException();
-       }
-  
-       public async Task SaveChangesAsync()
-       {
-           await _context.SaveChangesAsync();
-       }
-
-   }
   ``` 
+- Create CommonManagement.cs class from Common folder. This is importent class. we parse complex operating time string here also some common method used overall the project.
 
+  ```
+  using Microsoft.Azure.Cosmos.Spatial;
+  using RestaurantOpeningApi.DTOs;
+  using RestaurantOpeningApi.Models;
+  using System;
+  using System.Text.RegularExpressions;
+  
+  namespace RestaurantOpeningApi.Common
+  {
+      public class CommonManagement
+      {
+         
+          // Function to convert three-character day names to DayOfWeek enum
+          static DayOfWeek GetDayOfWeek(string day)
+          {
+              switch (day.ToLower())
+              {
+                  case "sun": return DayOfWeek.Sunday;
+                  case "mon": return DayOfWeek.Monday;
+                  case "tue": return DayOfWeek.Tuesday;
+                  case "tues": return DayOfWeek.Thursday;
+                  case "wed": return DayOfWeek.Wednesday;
+                  case "weds": return DayOfWeek.Wednesday;
+                  case "thu": return DayOfWeek.Thursday;
+                  case "thurs": return DayOfWeek.Thursday;                
+                  case "fri": return DayOfWeek.Friday;
+                  case "sat": return DayOfWeek.Saturday;
+                  default: throw new ArgumentException("Invalid day name");
+              }
+          }
+          static List<string> GetDayRange(string startDay, string endDay)
+          {
+  
+                  // Get the DayOfWeek enum representation of start and end days
+                  DayOfWeek startDayOfWeek = GetDayOfWeek(startDay);
+                  DayOfWeek endDayOfWeek = GetDayOfWeek(endDay);
+  
+                  List<string> days = new List<string>();
+  
+                  // Loop through the days and print the names
+                  for (int i = (int)startDayOfWeek; i % 7 != (int)endDayOfWeek; i++)
+                  {
+                      days.Add(((DayOfWeek)(i % 7)).ToString());
+                  }
+                  days.Add(endDayOfWeek.ToString());
+  
+                  return days;
+           
+          }
+          public  static TimeSpan ParseTime(string timeString)
+          {
+              // Define custom time formats
+              string[] formats = { "h tt", "h:mmtt", "htt", "hhtt" }; // For example: "11 am", "11:00am", "11am", "11am"
+  
+              // Parse the time string using custom formats
+              if (DateTime.TryParseExact(timeString, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out     DateTime parsedTime))
+              {
+                  return parsedTime.TimeOfDay;
+              }
+              else
+              {
+                  throw new ArgumentException("Invalid time format");
+              }
+          }
+          public   static List<RestaurantTimeDTO> ParseRestaurantTimeString(string operatingTimeString)
+          {
+  
+              string[] splitbySlash = operatingTimeString.Split('/');
+              List<string> operatingTime = new List<string>(splitbySlash);
+  
+  
+              List<RestaurantTimeDTO> restaurantTime = new List<RestaurantTimeDTO>();
+  
+              foreach (var item in operatingTime)
+              {
+  
+                  string itm = Regex.Replace(item, @"\s+", "");
+  
+                  char[] numberArr = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+                  int index = itm.IndexOfAny(numberArr);
+                  string dayPart = itm.Substring(0, index);
+                  string timePart = itm[index..itm.Length];
+  
+                  var days = dayPart.Split(',');
+  
+                  //Time part 
+                  var splitTime = timePart.Split("-");
+                  TimeSpan startTime = ParseTime(splitTime[0]);
+                  TimeSpan endTime = ParseTime(splitTime[1]);
+             
+                  try
+                  {
+                      foreach (var day in days)
+                          if (day.Contains("-"))
+                          {
+                              var dayRange = day.Split('-');
+  
+                              List<string> getDaysRange = GetDayRange(dayRange[0], dayRange[1]);
+  
+                              foreach (var dayname in getDaysRange)
+                              {
+                                  restaurantTime.Add(new RestaurantTimeDTO
+                                  {
+                                      OpeningDay = dayname,
+                                      OpeningTime = startTime,
+                                      ClosingTime = endTime,
+                                  });
+                              }
+                          }
+                          else
+                              restaurantTime.Add(new RestaurantTimeDTO
+                              {
+                                  OpeningDay = day,
+                                  OpeningTime = startTime,
+                                  ClosingTime = endTime,
+                              });
+                  }catch (Exception ex)
+                  {
+                      string msg = ex.Message;
+                  }
+              }
+  
+              return restaurantTime;
+  
+          }
+  
+          public static TimeSpan SetClosingTime(TimeSpan openTime, TimeSpan closingTime)
+          {
+              if (closingTime < openTime)
+              {
+                  // Add 24 hours to the end time to make it on the same day
+                  closingTime = closingTime.Add(new TimeSpan(24, 0, 0));
+              }
+  
+              return closingTime;
+          }
+          public static TimeSpan GetTotalTimeDuration(TimeSpan openTime, TimeSpan closingTime)
+          {
+              TimeSpan duration;
+              //// If the end time is before the start time, it means it's on the next day
+              if (closingTime < openTime)
+              {
+                  // Add 24 hours to the end time to make it on the same day
+                  closingTime = closingTime.Add(new TimeSpan(24, 0, 0));
+                  // Calculate the duration between the times
+                  duration = closingTime - openTime;
+              }
+              else
+              {
+                  duration = closingTime - openTime;
+              }
+  
+              return duration;
+              
+          }
+  
+          public static bool IsTimeOnDuration(TimeSpan time, TimeSpan openTime, TimeSpan closingTime)
+          {
+              TimeSpan duration;
+              //// If the end time is before the start time, it means it's on the next day
+              if (closingTime < openTime)           
+                  // Add 24 hours to the end time to make it on the same day
+                  closingTime = closingTime.Add(new TimeSpan(24, 0, 0));             
+              if(time < openTime)
+                  time = time.Add(new TimeSpan(24, 0, 0));
+  
+              if (time > openTime && time < closingTime)
+                  return true;
+              else return false;
+          }
+  
+          public static TimeSpan GetTimeSpanFromString(string time)
+          {
+              // Parsing a TimeSpan from a string representation
+              TimeSpan span;
+             var parseTime =  TimeSpan.TryParse(time,out span);
+              return span;
+          }
+      }
+      }   
+
+  ```
 - Now we need to inject this service to our project in Program.cs file. Open the file and put this line of code.
 
   ```    
