@@ -19,7 +19,7 @@ namespace RestaurantOpeningApi.Test.ServiceTest
 
         public DataUploadServiceTest()
         {
-            _restaurantServiceMock = new Mock<IRestaurantService>();
+            _restaurantServiceMock = new Mock<IRestaurantService>();    
             _restaurantDataService = new RestaurantDataService(_restaurantServiceMock.Object);
         }
 
@@ -42,7 +42,48 @@ namespace RestaurantOpeningApi.Test.ServiceTest
             Assert.Equal("Kushi Tsuru", data.First().Name);
             Assert.Equal("Mon-Sun 11:30 am - 9 pm", data.First().OperatingTime);
         }
-       
+
+        [Fact]
+        public async Task ParseRestaurantOperatingTime_shouldReturnRestaurant()
+        {
+            var dataService = new RawDataParserService();
+            var operatingTime = "\"Kushi Tsuru\",\"Mon-Sun 11:30 am - 9 pm\"\n\"Osakaya Restaurant\",\"Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm\"";
+
+            // Arrange
+            var expectedRestaurant= new List<Restaurant>
+            {
+                new Restaurant {Id ="1", Name = "Kushi Tsuru", OperatingTime ="Sun-Mon 11:30 am - 9 pm"
+                , restaurantTimes = new List<RestaurantTime>
+                {
+                    new     RestaurantTime {
+                        Id ="1",
+                        RestaurantId="1",
+                        OpeningDay="Sunday",
+                       OpeningTime = CommonManagement.ParseTime("11:30am"), 
+                       ClosingTime =CommonManagement.ParseTime( "9pm")}
+                    ,
+                     new     RestaurantTime {
+                        Id ="2",
+                        RestaurantId="1",
+                        OpeningDay="Monday",
+                       OpeningTime = CommonManagement.ParseTime("11:30am"),
+                       ClosingTime =CommonManagement.ParseTime( "9pm")}
+                },
+              
+                }
+            };
+
+            var restaurant = expectedRestaurant.First();
+            // Act
+            var data = await dataService.ParseRestaurantOperatingTime(restaurant.OperatingTime,restaurant.Id);
+
+            // Assert
+            Assert.NotNull(data);
+            Assert.Equal(restaurant.restaurantTimes.Count, data.Count);
+            Assert.Equal(restaurant.restaurantTimes.First().OpeningDay, data.First().OpeningDay);
+            Assert.Equal(restaurant.restaurantTimes.First().OpeningTime,data.First().OpeningTime);
+
+        }
 
         [Fact]
         public async Task AddRestaurantBatchAsync_ReturnTimeSpan_NotZero()
@@ -73,7 +114,7 @@ namespace RestaurantOpeningApi.Test.ServiceTest
                 name = "Kushi Tsuru",
                 day = "Monday"
             };
-            var expectedStudents = new List<Restaurant>
+            var expectedRestaurants = new List<Restaurant>
             {
                 new Restaurant {Id ="1", Name = "Kushi Tsuru", OperatingTime ="Mon-Sun 11:30 am - 9 pm"}
             };
@@ -81,7 +122,7 @@ namespace RestaurantOpeningApi.Test.ServiceTest
 
             // var mockStudentService = new Mock<IStudentService>();
             _restaurantServiceMock.Setup(x => x.GetAllRestaurantAsync(parameters))
-                              .ReturnsAsync(expectedStudents);
+                              .ReturnsAsync(expectedRestaurants);
 
 
 
@@ -89,7 +130,7 @@ namespace RestaurantOpeningApi.Test.ServiceTest
             var result = await _restaurantDataService.GetRestaurantAsync(parameters);
 
             // Assert
-            Assert.Equal(expectedStudents, result);
+            Assert.Equal(expectedRestaurants, result);
         }
 
     }

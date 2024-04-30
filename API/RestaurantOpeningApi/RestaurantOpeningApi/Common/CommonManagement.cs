@@ -86,14 +86,7 @@ namespace RestaurantOpeningApi.Common
                 var splitTime = timePart.Split("-");
                 TimeSpan startTime = ParseTime(splitTime[0]);
                 TimeSpan endTime = ParseTime(splitTime[1]);
-
-                //if(endTime < startTime)
-                //{
-                //    TimeSpan time = startTime;
-                //    startTime = endTime;
-                //    endTime = time;
-                //}
-
+           
                 try
                 {
                     foreach (var day in days)

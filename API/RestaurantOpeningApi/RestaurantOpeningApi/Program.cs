@@ -43,7 +43,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //possible object cycle avoiding 
-//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
@@ -58,13 +57,10 @@ if (app.Environment.IsDevelopment())
 }
 if (!app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
-    //app.UseExceptionHandler("/Error");
-    //app.UseHsts();
+    app.UseDeveloperExceptionPage();    
 }
-//app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:7222/", "http://localhost:4200/", "http://192.168.18.254:4200/"));
+
 app.UseCors("AllowAngularOrigins");
-//app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 app.UseRouting();
