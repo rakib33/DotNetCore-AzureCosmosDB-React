@@ -17,8 +17,8 @@ namespace RestaurantOpeningApi.DataContext
                 "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
                 databaseName: "restaurant-db");
         }
-        public DbSet<Restaurant> Restaurants { get; set; }
-        public DbSet<RestaurantTime> RestaurantTimes { get; set; }
+        public virtual DbSet<Restaurant> Restaurants { get; set; }
+        public virtual DbSet<RestaurantTime> RestaurantTimes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -27,7 +27,7 @@ namespace RestaurantOpeningApi.Common
                 default: throw new ArgumentException("Invalid day name");
             }
         }
-        static List<string> GetDayRange(string startDay, string endDay)
+       public static List<string> GetDayRange(string startDay, string endDay)
         {
 
                 // Get the DayOfWeek enum representation of start and end days

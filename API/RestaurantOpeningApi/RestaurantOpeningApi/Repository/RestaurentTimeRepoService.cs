@@ -12,14 +12,14 @@ namespace RestaurantOpeningApi.Repository
         {
             _context = restaurantContext;
         }
-        public Task<List<RestaurantTime>> GetAllRestaurantTimeAsync()
+        public async Task<List<RestaurantTime>> GetAllRestaurantTimeAsync()
         {
-            return _context.RestaurantTimes.ToListAsync();
+            return await  _context.RestaurantTimes.ToListAsync();
         }
 
-        public Task<List<RestaurantTime>> GetRestaurantTimeByRestuarentIdAsync(string id)
+        public async Task<List<RestaurantTime>> GetRestaurantTimeByRestuarentIdAsync(string id)
         {
-            return _context.RestaurantTimes.Where(x=>x.RestaurantId == id).ToListAsync();
+            return await _context.RestaurantTimes.Where(x=>x.RestaurantId == id).ToListAsync();
         }
     }
 }

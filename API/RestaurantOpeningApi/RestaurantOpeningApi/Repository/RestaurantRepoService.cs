@@ -70,7 +70,9 @@ namespace RestaurantOpeningApi.Services
                     await _context.Entry(restaurant).Collection(p=>p.restaurantTimes).LoadAsync();
             }
 
-            return restaurants.Skip((p.Pagination.Page -1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
+            if(restaurants.Count > 0)
+             return restaurants.Skip((p.Pagination.Page -1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
+            else return null;
 
         }
 

@@ -46,10 +46,7 @@ namespace RestaurantOpeningApi.Test.ServiceTest
         [Fact]
         public async Task ParseRestaurantOperatingTime_shouldReturnRestaurant()
         {
-            var dataService = new RawDataParserService();
-            var operatingTime = "\"Kushi Tsuru\",\"Mon-Sun 11:30 am - 9 pm\"\n\"Osakaya Restaurant\",\"Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm\"";
-
-            // Arrange
+            var dataService = new RawDataParserService();                   // Arrange
             var expectedRestaurant= new List<Restaurant>
             {
                 new Restaurant {Id ="1", Name = "Kushi Tsuru", OperatingTime ="Sun-Mon 11:30 am - 9 pm"

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CsvHelper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Logging;
@@ -11,21 +12,29 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace RestaurantOpeningApi.Test.ControllerTest
 {
+
     public class RestaurantControllerTest
     {
         private readonly RestaurantDataUploadController _restaurantDataUploadController;
         private readonly Mock<IRawDataParser> _dataService;
         private readonly Mock<IRestaurantDataService> _restaurantService;
+        private readonly Mock<IFormFile> _fileMock;
+        private readonly List<Restaurant> _restaurantList ;
         public RestaurantControllerTest()
         {
             _dataService = new Mock<IRawDataParser>();
             _restaurantService = new Mock<IRestaurantDataService>();
+            _fileMock =  new Mock<IFormFile>();
+            _restaurantList  = new List<Restaurant> { new Restaurant { Name = "Kushi Tsuru", OperatingTime = "Mon-Sun 11:30 am - 9 pm" } };
+            _dataService.Setup(d => d.ProcessCsvFileAsync(It.IsAny<Stream>())).ReturnsAsync(_restaurantList);
+
             _restaurantDataUploadController = new RestaurantDataUploadController(_dataService.Object,_restaurantService.Object);
         }
 
@@ -42,14 +51,7 @@ namespace RestaurantOpeningApi.Test.ControllerTest
             Assert.IsAssignableFrom<Task<IActionResult>>(result);
         }
 
-        [Fact]
-        public void UploadCsvFile_ReturnIActionResult()
-        {
-            var csvData = "\"Kushi Tsuru\",\"Mon-Sun 11:30 am - 9 pm\"\n\"Osakaya Restaurant\",\"Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm\"";
-            using var memoryStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(csvData));
-
-        }
-
+     
         [Fact]
         public async Task UploadCsvFile_ReturnBadRequest_ForNullFile()
         {
@@ -92,8 +94,7 @@ namespace RestaurantOpeningApi.Test.ControllerTest
             // Assert
             var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
             Assert.Equal("Invalid file type. Only CSV files are allowed.", badRequestResult.Value);
-        }
+        }     
 
-        
     }
 }
