@@ -12,6 +12,8 @@ namespace RestaurantOpeningApi.Services
     public class RestaurantRepoService : IRestaurantService
     {
         RestaurantContext _context;
+
+
         public RestaurantRepoService(RestaurantContext restaurantContext)
         {
             _context = restaurantContext;
@@ -50,29 +52,31 @@ namespace RestaurantOpeningApi.Services
         
         public async Task<List<Restaurant>> GetAllRestaurantAsync(RestaurantParameters p)
         {
+            //return await _context.Restaurants.ToListAsync();
+            var query = _context.Restaurants.AsQueryable();
 
-           var query =  _context.Restaurants.AsQueryable();
-            
             //Apply filtering 
             if (!string.IsNullOrEmpty(p.name))
                 query = query.Where(s => s.Name.Contains(p.name));
-           
+
             List<Restaurant> restaurants = await query.ToListAsync();
+            
             //Explicit Loading
+            if (!string.IsNullOrEmpty(p.day) || ( p.time != new TimeSpan(0, 0, 0)))
             foreach (var restaurant in restaurants)
             {
                 if (!string.IsNullOrEmpty(p.day))
-                    await _context.Entry(restaurant).Collection(s => s.restaurantTimes.Where(c=>c.OpeningDay.Contains(p.day))).LoadAsync();
+                    await _context.Entry(restaurant).Collection(s => s.restaurantTimes.Where(c => c.OpeningDay.Contains(p.day))).LoadAsync();
 
-                if (p.time != null)
+                if (p.time != new TimeSpan(0, 0, 0))
                     await _context.Entry(restaurant).Collection(s => s.restaurantTimes.Where(c => p.time <= c.ClosingTime && p.time >= c.OpeningTime)).LoadAsync();
                 else
-                    await _context.Entry(restaurant).Collection(p=>p.restaurantTimes).LoadAsync();
+                    await _context.Entry(restaurant).Collection(p => p.restaurantTimes).LoadAsync();
             }
 
-            if(restaurants.Count > 0)
-             return restaurants.Skip((p.Pagination.Page -1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
-            else return null;
+            if (restaurants.Count > 0)
+                return restaurants.Skip((p.Pagination.Page - 1) * p.Pagination.PageSize).Take(p.Pagination.PageSize).ToList();
+            else return restaurants;
 
         }
 

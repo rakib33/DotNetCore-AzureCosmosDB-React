@@ -109,7 +109,7 @@ namespace RestaurantOpeningApi.Common
                         else
                             restaurantTime.Add(new RestaurantTimeDTO
                             {
-                                OpeningDay = day,
+                                OpeningDay = GetDayOfWeek(day).ToString(),
                                 OpeningTime = startTime,
                                 ClosingTime = endTime,
                             });

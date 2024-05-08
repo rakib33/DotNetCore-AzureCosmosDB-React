@@ -46,9 +46,10 @@ namespace RestaurantOpeningApi.Test.ControllerTest
             //act
             var result = _restaurantDataUploadController.GetRestaurants("","","");
             //assert
-            Assert.NotNull(result);
+            Assert.NotNull(result);    
             //assert
             Assert.IsAssignableFrom<Task<IActionResult>>(result);
+            
         }
 
      
