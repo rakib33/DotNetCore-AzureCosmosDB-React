@@ -958,3 +958,4 @@ For data upload from given csv file to database we need to parse the data and th
 - https://www.codeproject.com/Articles/1256191/Angular-6-Application-with-Cosmos-DB-and-Web-API-2
 - https://www.c-sharpcorner.com/article/bulk-operations-in-entity-framework-core/
 - https://codesloth.blog/visual-studio-code-coverage-with-fine-code-coverage-visual-studio-2022/
+-https://stackoverflow.com/questions/54219742/mocking-ef-core-dbcontext-and-dbset
