@@ -47,9 +47,9 @@ namespace RestaurantOpeningApi.Controllers
                     await _restaurantService.AddRestaurantBatchAsync(restaurants,100);   
                     return StatusCode(StatusCodes.Status201Created, "Data uploaded successfully.");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, "Data uploaded failed.");
+                    return StatusCode(StatusCodes.Status500InternalServerError, "Data uploaded failed." + ex.Message);
                 }
             }
             else
