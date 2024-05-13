@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Moq;
 using RestaurantOpeningApi.Common;
 using RestaurantOpeningApi.Controllers;
+using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 using System;
@@ -27,6 +29,7 @@ namespace RestaurantOpeningApi.Test.ControllerTest
         private readonly Mock<IRestaurantDataService> _restaurantService;
         private readonly Mock<IFormFile> _fileMock;
         private readonly List<Restaurant> _restaurantList ;
+        private readonly Mock<IOptions<CosmosDbOptions>> _cosmosdbOptions;
         public RestaurantControllerTest()
         {
             _dataService = new Mock<IRawDataParser>();
@@ -34,8 +37,8 @@ namespace RestaurantOpeningApi.Test.ControllerTest
             _fileMock =  new Mock<IFormFile>();
             _restaurantList  = new List<Restaurant> { new Restaurant { Name = "Kushi Tsuru", OperatingTime = "Mon-Sun 11:30 am - 9 pm" } };
             _dataService.Setup(d => d.ProcessCsvFileAsync(It.IsAny<Stream>())).ReturnsAsync(_restaurantList);
-
-            _restaurantDataUploadController = new RestaurantDataUploadController(_dataService.Object,_restaurantService.Object);
+            _cosmosdbOptions = new Mock<IOptions<CosmosDbOptions>>();
+            _restaurantDataUploadController = new RestaurantDataUploadController(_dataService.Object,_restaurantService.Object, _cosmosdbOptions.Object);
         }
 
         [Fact]

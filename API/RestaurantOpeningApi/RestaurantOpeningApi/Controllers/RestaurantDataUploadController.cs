@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using RestaurantOpeningApi.Common;
+using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Models;
 
@@ -12,11 +14,15 @@ namespace RestaurantOpeningApi.Controllers
     {   
         private readonly IRawDataParser _dataService;
         private readonly IRestaurantDataService _restaurantService;
-        public RestaurantDataUploadController(IRawDataParser dataService , IRestaurantDataService restaurantService)
+        private readonly CosmosDbOptions _cosmosDbOptions;
+        public RestaurantDataUploadController(
+            IRawDataParser dataService , 
+            IRestaurantDataService restaurantService,
+            IOptions<CosmosDbOptions> options)
         {
             _dataService = dataService;     
             _restaurantService = restaurantService;
-          
+            _cosmosDbOptions = options.Value;          
         }
         
 
@@ -63,7 +69,9 @@ namespace RestaurantOpeningApi.Controllers
         [ProducesResponseType(typeof(List<Restaurant>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetRestaurants(string name,string day,string time, int page = 1, int pageSize = 50)
-        {
+            {
+           // var data = _cosmosDbOptions;
+
             RestaurantParameters parms = new RestaurantParameters();
             Pagination pagination = new Pagination();
             pagination.Page = 1;

@@ -1,0 +1,4707 @@
+﻿{
+  "$id": "1",
+  "$values": [
+    {
+      "$id": "2",
+      "id": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+      "name": "Kushi Tsuru",
+      "operatingTime": "Mon-Sun 11:30 am - 9 pm",
+      "restaurantTimes": {
+        "$id": "3",
+        "$values": [
+          {
+            "$id": "4",
+            "id": "0f50b88b-3cb3-4994-a2ee-bed9be2dbcec",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          },
+          {
+            "$id": "5",
+            "id": "f075ea11-7af7-4e2c-b93f-065a7971c649",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          },
+          {
+            "$id": "6",
+            "id": "6b008c5c-fbee-42bf-9cd8-63585889164e",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          },
+          {
+            "$id": "7",
+            "id": "4304aa6d-cd44-4bdd-8ec2-964f7e4be562",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          },
+          {
+            "$id": "8",
+            "id": "9c298211-ca27-43a9-9747-983957b25a27",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          },
+          {
+            "$id": "9",
+            "id": "e398a138-a2a2-4efa-9438-1a22c2121386",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          },
+          {
+            "$id": "10",
+            "id": "4e331ea7-bb46-4ebf-a0bd-838691181187",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "773cd224-88d9-4f86-b191-28274f7a1d0e",
+            "restaurant": {
+              "$ref": "2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "11",
+      "id": "735131b7-443a-40c4-9306-1129705a6901",
+      "name": "Osakaya Restaurant",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm",
+      "restaurantTimes": {
+        "$id": "12",
+        "$values": [
+          {
+            "$id": "13",
+            "id": "aad76ced-2df2-45c2-b7c4-58f3beeeb043",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          },
+          {
+            "$id": "14",
+            "id": "ec7a56e6-9dec-4b62-b9f7-30cdf40f2b03",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          },
+          {
+            "$id": "15",
+            "id": "a8ab811c-6dbd-4228-ab5f-2e2758648103",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          },
+          {
+            "$id": "16",
+            "id": "a2167dcf-6608-47a5-9cde-b4a7de8b3372",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          },
+          {
+            "$id": "17",
+            "id": "b1f33e13-c1de-49c2-9b5b-d9b4b249c164",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          },
+          {
+            "$id": "18",
+            "id": "b9ebeff7-554a-4c33-968a-c3c4b387a91a",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          },
+          {
+            "$id": "19",
+            "id": "93276f6d-8912-4972-af1d-3cd2078275ea",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "735131b7-443a-40c4-9306-1129705a6901",
+            "restaurant": {
+              "$ref": "11"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "20",
+      "id": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+      "name": "The Stinking Rose",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 10 pm  / Fri-Sat 11:30 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "21",
+        "$values": [
+          {
+            "$id": "22",
+            "id": "0753a77b-5854-44fb-9d54-915061bc7011",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          },
+          {
+            "$id": "23",
+            "id": "c9b1b97f-ba1a-41f5-bbb1-e3cb23846127",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          },
+          {
+            "$id": "24",
+            "id": "0f1b6854-1088-40d5-8280-695960fb4957",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          },
+          {
+            "$id": "25",
+            "id": "557c2e77-4b03-4d38-895f-15bac47481eb",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          },
+          {
+            "$id": "26",
+            "id": "c088e5ed-4aeb-4188-bcc2-d061094289b8",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          },
+          {
+            "$id": "27",
+            "id": "9c992c82-c5de-4e48-9561-7fb1d19f3ec8",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          },
+          {
+            "$id": "28",
+            "id": "e807f469-b4e7-4fa5-ad49-fd9117a7aecc",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "24229f5e-4aef-4e7b-b674-a6ec213dd7a1",
+            "restaurant": {
+              "$ref": "20"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "29",
+      "id": "36de1990-ca55-4aec-8d4e-900929d0df29",
+      "name": "McCormick & Kuleto's",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 10 pm  / Fri-Sat 11:30 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "30",
+        "$values": [
+          {
+            "$id": "31",
+            "id": "333356e0-2d12-42a5-9183-871f94341c43",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          },
+          {
+            "$id": "32",
+            "id": "8ebf0f59-0009-4fec-8c3c-8d6ae0ac423c",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          },
+          {
+            "$id": "33",
+            "id": "652cc463-69ba-44d8-bed1-2d71536547c5",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          },
+          {
+            "$id": "34",
+            "id": "fa639668-609b-4829-8d26-9cc56902d351",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          },
+          {
+            "$id": "35",
+            "id": "f7f753d5-3bd9-44b8-a838-4b76f54ebd15",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          },
+          {
+            "$id": "36",
+            "id": "c1769d75-22e3-4f28-bc43-c97f126e3d98",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          },
+          {
+            "$id": "37",
+            "id": "9efec26d-d50f-4bab-8e07-9163833b7fd4",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "36de1990-ca55-4aec-8d4e-900929d0df29",
+            "restaurant": {
+              "$ref": "29"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "38",
+      "id": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+      "name": "Mifune Restaurant",
+      "operatingTime": "Mon-Sun 11 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "39",
+        "$values": [
+          {
+            "$id": "40",
+            "id": "dcfbcdd2-bc8b-46b1-9f36-225ded5eb4e8",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          },
+          {
+            "$id": "41",
+            "id": "f1bbc406-d3d0-4124-b510-3cd6f94fe56e",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          },
+          {
+            "$id": "42",
+            "id": "67a6a70d-d5f0-40b2-86fb-a74b442d4daf",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          },
+          {
+            "$id": "43",
+            "id": "3684370d-b780-4260-bf83-80a7dfa9ed96",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          },
+          {
+            "$id": "44",
+            "id": "89b50a33-f410-441f-83d6-f7359ac99fc1",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          },
+          {
+            "$id": "45",
+            "id": "267ff75f-22c2-43a0-8e6b-c82647ffa51a",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          },
+          {
+            "$id": "46",
+            "id": "7401f3c1-335b-4c26-854f-072541d76d6b",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "aaefc897-6e0d-47b8-b50f-6b2d9bc6f7cf",
+            "restaurant": {
+              "$ref": "38"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "47",
+      "id": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+      "name": "The Cheesecake Factory",
+      "operatingTime": "Mon-Thu 11 am - 11 pm  / Fri-Sat 11 am - 12:30 am  / Sun 10 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "48",
+        "$values": [
+          {
+            "$id": "49",
+            "id": "29f46196-2d9e-4872-9cda-5a3c8ab36191",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          },
+          {
+            "$id": "50",
+            "id": "d92a2c84-34fe-48b9-ba42-9289e8a9fb82",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          },
+          {
+            "$id": "51",
+            "id": "ccd0624a-df90-4b79-90e0-33045b04b0c7",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          },
+          {
+            "$id": "52",
+            "id": "60646f00-c1e1-4499-bcb9-70b1c4f207bf",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          },
+          {
+            "$id": "53",
+            "id": "b7917a6c-0317-4417-9f6d-ccd535e4de24",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "13:30:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          },
+          {
+            "$id": "54",
+            "id": "18d173e3-84b6-42d6-82dd-a0f1761d58b5",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "13:30:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          },
+          {
+            "$id": "55",
+            "id": "860e9955-2382-42f9-a628-a20fd06bf909",
+            "openingDay": "Sunday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "cab9d533-5e28-404c-a0a2-77d7bc1e2e33",
+            "restaurant": {
+              "$ref": "47"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "56",
+      "id": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+      "name": "New Delhi Indian Restaurant",
+      "operatingTime": "Mon-Sat 11:30 am - 10 pm  / Sun 5:30 pm - 10 pm",
+      "restaurantTimes": {
+        "$id": "57",
+        "$values": [
+          {
+            "$id": "58",
+            "id": "56b2e4ee-8391-433b-bb80-e1ac856780ee",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          },
+          {
+            "$id": "59",
+            "id": "b4912cdb-a024-4ae0-897d-6e912aec4f15",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          },
+          {
+            "$id": "60",
+            "id": "9f395df1-73cd-4f32-9be7-06861d906898",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          },
+          {
+            "$id": "61",
+            "id": "3900920b-d736-498b-a8a2-c8022b031e52",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          },
+          {
+            "$id": "62",
+            "id": "94ccff84-429f-47a3-9552-139e413be45c",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          },
+          {
+            "$id": "63",
+            "id": "2b5ee421-efcf-4621-8a0e-144736905b13",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          },
+          {
+            "$id": "64",
+            "id": "f1dc6cda-d480-430f-9fe9-ccee41771c6b",
+            "openingDay": "Sunday",
+            "openingTime": "17:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "04:30:00",
+            "restaurantId": "79627de6-fb96-4acd-9e8e-0c899c82f3ca",
+            "restaurant": {
+              "$ref": "56"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "65",
+      "id": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+      "name": "Iroha Restaurant",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 9:30 pm  / Fri-Sat 11:30 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "66",
+        "$values": [
+          {
+            "$id": "67",
+            "id": "940858c0-66c9-430f-9051-16dda7b227bd",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          },
+          {
+            "$id": "68",
+            "id": "d9a98a86-db37-4e85-9212-7563cf78636f",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          },
+          {
+            "$id": "69",
+            "id": "900ced70-f106-49b3-96ec-bf47ab71421b",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          },
+          {
+            "$id": "70",
+            "id": "204ec37f-1a58-4353-be8a-dd7f06c00aa2",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          },
+          {
+            "$id": "71",
+            "id": "87424059-bc70-4acc-8ca0-014d43f253c0",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          },
+          {
+            "$id": "72",
+            "id": "94b360c3-d176-4b08-9d42-bd1cd39ccd1e",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          },
+          {
+            "$id": "73",
+            "id": "6ff26d7b-e54a-44f7-b923-f6ad77dc7ad8",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6cb66738-79dd-4915-82a0-e63c7f4183d0",
+            "restaurant": {
+              "$ref": "65"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "74",
+      "id": "64b95242-7738-4337-82b2-27401408e320",
+      "name": "Rose Pistola",
+      "operatingTime": "Mon-Thu 11:30 am - 10 pm  / Fri-Sun 11:30 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "75",
+        "$values": [
+          {
+            "$id": "76",
+            "id": "60aee1da-885f-4883-a1fb-eadcab30e264",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          },
+          {
+            "$id": "77",
+            "id": "3c8d9331-5e48-4d01-9d45-d488be1b6698",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          },
+          {
+            "$id": "78",
+            "id": "4088e0e7-299d-410b-8b02-63937ce5d178",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          },
+          {
+            "$id": "79",
+            "id": "8858a30e-936f-403b-951a-52718e2c06df",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          },
+          {
+            "$id": "80",
+            "id": "8a3b8317-4aff-4f49-8764-1a93db2c646d",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          },
+          {
+            "$id": "81",
+            "id": "23c7ccd6-73d3-4279-b879-32dae4b592af",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          },
+          {
+            "$id": "82",
+            "id": "e190f060-cbb0-4372-93bf-703efb8e7440",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "64b95242-7738-4337-82b2-27401408e320",
+            "restaurant": {
+              "$ref": "74"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "83",
+      "id": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+      "name": "Alioto's Restaurant",
+      "operatingTime": "Mon-Sun 11 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "84",
+        "$values": [
+          {
+            "$id": "85",
+            "id": "c20db44a-0add-4d37-9883-08d2234aea3c",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          },
+          {
+            "$id": "86",
+            "id": "accc9fc5-1585-4fbc-94a9-6882d2a4cbae",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          },
+          {
+            "$id": "87",
+            "id": "ff1784e2-0937-49b7-a74c-2a8de5048bdb",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          },
+          {
+            "$id": "88",
+            "id": "a606c8dc-04ef-44fe-85bc-8aeee4e1135f",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          },
+          {
+            "$id": "89",
+            "id": "e958eace-fdfb-41f6-baeb-e9cca9e4d739",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          },
+          {
+            "$id": "90",
+            "id": "454ffe59-6793-4062-a815-f07ad8cb75b4",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          },
+          {
+            "$id": "91",
+            "id": "126dd663-bc2d-4a5d-b4e7-f742b402718e",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "42327c4e-bb0a-4cef-b55a-bd640b1b1016",
+            "restaurant": {
+              "$ref": "83"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "92",
+      "id": "322626af-baff-4705-84e4-9df03665dc13",
+      "name": "Canton Seafood & Dim Sum Restaurant",
+      "operatingTime": "Mon-Fri 10:30 am - 9:30 pm  / Sat-Sun 10 am - 9:30 pm",
+      "restaurantTimes": {
+        "$id": "93",
+        "$values": [
+          {
+            "$id": "94",
+            "id": "94c75550-e2fd-434a-853c-b7d41add1e2b",
+            "openingDay": "Monday",
+            "openingTime": "10:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          },
+          {
+            "$id": "95",
+            "id": "8f6c283b-e463-4f88-8fbe-3c60a233e12f",
+            "openingDay": "Tuesday",
+            "openingTime": "10:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          },
+          {
+            "$id": "96",
+            "id": "2aafd518-2a4e-423c-ae3f-0abf918dcd08",
+            "openingDay": "Wednesday",
+            "openingTime": "10:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          },
+          {
+            "$id": "97",
+            "id": "4ca21e6e-2221-4138-b204-9d24b5e22083",
+            "openingDay": "Thursday",
+            "openingTime": "10:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          },
+          {
+            "$id": "98",
+            "id": "5d09176e-a004-4fd3-9ed2-b9cf4069ecfa",
+            "openingDay": "Friday",
+            "openingTime": "10:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          },
+          {
+            "$id": "99",
+            "id": "0b82187d-0482-4626-a00a-2db8096b6f86",
+            "openingDay": "Saturday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          },
+          {
+            "$id": "100",
+            "id": "23670d34-55a3-44f2-a386-b2d6b9872a24",
+            "openingDay": "Sunday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "322626af-baff-4705-84e4-9df03665dc13",
+            "restaurant": {
+              "$ref": "92"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "101",
+      "id": "f0490517-b8fb-445a-b21c-df34ee919107",
+      "name": "All Season Restaurant",
+      "operatingTime": "Mon-Fri 10 am - 9:30 pm  / Sat-Sun 9:30 am - 9:30 pm",
+      "restaurantTimes": {
+        "$id": "102",
+        "$values": [
+          {
+            "$id": "103",
+            "id": "2ac5e3a1-824a-47e6-a159-0f0f2e0f52ea",
+            "openingDay": "Monday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          },
+          {
+            "$id": "104",
+            "id": "c1e70c24-6058-4c27-b8b9-4a160fa91454",
+            "openingDay": "Tuesday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          },
+          {
+            "$id": "105",
+            "id": "2d4bf692-a07b-4d0f-b951-c2f5b5de24b8",
+            "openingDay": "Wednesday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          },
+          {
+            "$id": "106",
+            "id": "2cd14f18-77f3-45cc-b576-1bd9531bbe6b",
+            "openingDay": "Thursday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          },
+          {
+            "$id": "107",
+            "id": "e9e60445-c1b9-4a36-ab82-7f2294d42133",
+            "openingDay": "Friday",
+            "openingTime": "10:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          },
+          {
+            "$id": "108",
+            "id": "8f838fa7-0554-471c-87a2-b5b5ba0643fd",
+            "openingDay": "Saturday",
+            "openingTime": "09:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          },
+          {
+            "$id": "109",
+            "id": "09459aab-e1a6-4766-8869-eb03c86d61bf",
+            "openingDay": "Sunday",
+            "openingTime": "09:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "f0490517-b8fb-445a-b21c-df34ee919107",
+            "restaurant": {
+              "$ref": "101"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "110",
+      "id": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+      "name": "Bombay Indian Restaurant",
+      "operatingTime": "Mon-Sun 11:30 am - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "111",
+        "$values": [
+          {
+            "$id": "112",
+            "id": "5000d0f5-e003-4959-a077-ab8fc1a65897",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          },
+          {
+            "$id": "113",
+            "id": "745bbf0b-a88f-45f9-99a3-a34930270297",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          },
+          {
+            "$id": "114",
+            "id": "fc58bd9a-ca4d-4881-8d33-c4bbc04ed15b",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          },
+          {
+            "$id": "115",
+            "id": "4d8d0b3f-a795-4316-bec1-71b5d1b0a125",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          },
+          {
+            "$id": "116",
+            "id": "f4fd5d9a-d1ae-446f-a062-aec4d3b162b7",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          },
+          {
+            "$id": "117",
+            "id": "1dbe1468-1752-4a00-9534-f12edde6b753",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          },
+          {
+            "$id": "118",
+            "id": "a3ed1f21-d3d1-4764-9e30-952a01017b57",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "38f2a7c6-0c71-4b29-a619-be655fa1d16f",
+            "restaurant": {
+              "$ref": "110"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "119",
+      "id": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+      "name": "Sam's Grill & Seafood Restaurant",
+      "operatingTime": "Mon-Fri 11 am - 9 pm  / Sat 5 pm - 9 pm",
+      "restaurantTimes": {
+        "$id": "120",
+        "$values": [
+          {
+            "$id": "121",
+            "id": "5cdb1c94-75ae-4b97-9def-c78e4d737357",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+            "restaurant": {
+              "$ref": "119"
+            }
+          },
+          {
+            "$id": "122",
+            "id": "39f9f38d-01a5-4fcc-8569-33493902bbd6",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+            "restaurant": {
+              "$ref": "119"
+            }
+          },
+          {
+            "$id": "123",
+            "id": "68f452d9-71fb-4101-98b9-fafb4e6635c3",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+            "restaurant": {
+              "$ref": "119"
+            }
+          },
+          {
+            "$id": "124",
+            "id": "72db8baa-a10f-4747-917b-96bb1c07f6f7",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+            "restaurant": {
+              "$ref": "119"
+            }
+          },
+          {
+            "$id": "125",
+            "id": "88f589f3-8e75-4f5f-a1ab-e9e028a8f7ac",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+            "restaurant": {
+              "$ref": "119"
+            }
+          },
+          {
+            "$id": "126",
+            "id": "7c96ee03-1aa5-4076-8364-d96c1b218c8b",
+            "openingDay": "Saturday",
+            "openingTime": "17:00:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "04:00:00",
+            "restaurantId": "7e6733f3-e410-44cd-a872-ee278ef2ad5a",
+            "restaurant": {
+              "$ref": "119"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "127",
+      "id": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+      "name": "2G Japanese Brasserie",
+      "operatingTime": "Mon-Thu, Sun 11 am - 10 pm  / Fri-Sat 11 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "128",
+        "$values": [
+          {
+            "$id": "129",
+            "id": "9a7698ef-4452-412e-8326-97ed4eae3354",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          },
+          {
+            "$id": "130",
+            "id": "c1246843-24fd-4ee2-bf13-8d3667b1e742",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          },
+          {
+            "$id": "131",
+            "id": "cbb30fc1-483e-42e0-869c-01e2df3a543a",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          },
+          {
+            "$id": "132",
+            "id": "a4275bcf-6dd7-4c3c-b467-957ec953715e",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          },
+          {
+            "$id": "133",
+            "id": "28cb3172-d333-4056-864b-ac120cf3f853",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          },
+          {
+            "$id": "134",
+            "id": "937f906f-9f56-4166-841d-4cebfce67141",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          },
+          {
+            "$id": "135",
+            "id": "2f802ded-a055-43ed-a5c1-6f97561862de",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "8e6a2ef1-29d9-419f-b25c-95b4b5b4b57e",
+            "restaurant": {
+              "$ref": "127"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "136",
+      "id": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+      "name": "Restaurant Lulu",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "137",
+        "$values": [
+          {
+            "$id": "138",
+            "id": "aa794088-81d9-4ca4-b72f-bb4766d5b2df",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          },
+          {
+            "$id": "139",
+            "id": "9c30b0e2-a0e0-4df8-87c1-dd3512506977",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          },
+          {
+            "$id": "140",
+            "id": "2ba7325a-2f21-493d-8260-52a3ec5fdc46",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          },
+          {
+            "$id": "141",
+            "id": "dbb7f75d-d00d-4168-b667-38dbaea14c3a",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          },
+          {
+            "$id": "142",
+            "id": "f5d6ba68-f55f-41f4-9781-226c41ac7f28",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:00:00",
+            "totalTimeDuration": "09:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          },
+          {
+            "$id": "143",
+            "id": "68d9e32f-044f-4b48-9106-2a34a1b1b556",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          },
+          {
+            "$id": "144",
+            "id": "6f3b7e91-e923-49ba-a814-bbeca44357bb",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c738c3eb-dfb1-4736-80a7-a35692f2e1d6",
+            "restaurant": {
+              "$ref": "136"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "145",
+      "id": "b210854c-65a2-472b-a877-05a44190bcbd",
+      "name": "Sudachi",
+      "operatingTime": "Mon-Wed 5 pm - 12:30 am  / Thu-Fri 5 pm - 1:30 am  / Sat 3 pm - 1:30 am  / Sun 3 pm - 11:30 pm",
+      "restaurantTimes": {
+        "$id": "146",
+        "$values": [
+          {
+            "$id": "147",
+            "id": "e1920190-89c8-45d7-8bda-c010fa675af3",
+            "openingDay": "Monday",
+            "openingTime": "17:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "07:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          },
+          {
+            "$id": "148",
+            "id": "d1b7d311-1925-4a5e-917e-71c4b98aae99",
+            "openingDay": "Tuesday",
+            "openingTime": "17:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "07:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          },
+          {
+            "$id": "149",
+            "id": "b9f90432-720d-4334-9f7b-ac98bf9c7520",
+            "openingDay": "Wednesday",
+            "openingTime": "17:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "07:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          },
+          {
+            "$id": "150",
+            "id": "4f879ca4-822f-4a73-8b94-1a3d090d886a",
+            "openingDay": "Thursday",
+            "openingTime": "17:00:00",
+            "closingTime": "1.01:30:00",
+            "totalTimeDuration": "08:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          },
+          {
+            "$id": "151",
+            "id": "d48c518b-a73d-47b3-88eb-bdf4d6d406bb",
+            "openingDay": "Friday",
+            "openingTime": "17:00:00",
+            "closingTime": "1.01:30:00",
+            "totalTimeDuration": "08:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          },
+          {
+            "$id": "152",
+            "id": "21768711-9d87-43c6-9dae-077c366c5aae",
+            "openingDay": "Saturday",
+            "openingTime": "15:00:00",
+            "closingTime": "1.01:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          },
+          {
+            "$id": "153",
+            "id": "c69f4ead-cdcc-4659-82c9-1eef20c373ed",
+            "openingDay": "Sunday",
+            "openingTime": "15:00:00",
+            "closingTime": "23:30:00",
+            "totalTimeDuration": "08:30:00",
+            "restaurantId": "b210854c-65a2-472b-a877-05a44190bcbd",
+            "restaurant": {
+              "$ref": "145"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "154",
+      "id": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+      "name": "Hanuri",
+      "operatingTime": "Mon-Sun 11 am - 12 am",
+      "restaurantTimes": {
+        "$id": "155",
+        "$values": [
+          {
+            "$id": "156",
+            "id": "aef760c8-b306-4585-ba2d-926d7530bb5e",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          },
+          {
+            "$id": "157",
+            "id": "638fbd52-60b4-4d82-99cb-f1afd6848fd7",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          },
+          {
+            "$id": "158",
+            "id": "0400466f-56a4-4145-aecb-a4e8cbbfbe9f",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          },
+          {
+            "$id": "159",
+            "id": "166845cd-ea56-49c0-a662-d8f8cc207a8b",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          },
+          {
+            "$id": "160",
+            "id": "0e4a1bc8-3973-4243-9a89-8b531676d86a",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          },
+          {
+            "$id": "161",
+            "id": "314cbf8c-64f2-4ec1-a35f-676f8a06d823",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          },
+          {
+            "$id": "162",
+            "id": "37d69215-28f8-4dc6-a347-7e719bec52ff",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "29ad90bf-b498-4a2f-828c-7487d387ca35",
+            "restaurant": {
+              "$ref": "154"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "163",
+      "id": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+      "name": "Herbivore",
+      "operatingTime": "Mon-Thu, Sun 9 am - 10 pm  / Fri-Sat 9 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "164",
+        "$values": [
+          {
+            "$id": "165",
+            "id": "cd2a94b8-f6b5-4c50-808b-62ccbd99a5f6",
+            "openingDay": "Monday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          },
+          {
+            "$id": "166",
+            "id": "64f7e9da-b6ce-428e-b542-d1cfe83e8d60",
+            "openingDay": "Tuesday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          },
+          {
+            "$id": "167",
+            "id": "9ed46b40-1aa7-4899-b0a7-fcbbb4d5fdf2",
+            "openingDay": "Wednesday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          },
+          {
+            "$id": "168",
+            "id": "4adf4ca1-eb2d-4fde-ae67-0fb4908d1aa0",
+            "openingDay": "Thursday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          },
+          {
+            "$id": "169",
+            "id": "c7ef71d5-f28a-4fa7-8045-c362190fa02c",
+            "openingDay": "Sunday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          },
+          {
+            "$id": "170",
+            "id": "acb8220b-1296-475d-9020-c4f1045dd96e",
+            "openingDay": "Friday",
+            "openingTime": "09:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          },
+          {
+            "$id": "171",
+            "id": "d580e021-6576-429c-9572-1a1813736224",
+            "openingDay": "Saturday",
+            "openingTime": "09:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "a1a0e292-4444-4c89-9120-766b6ac3aebf",
+            "restaurant": {
+              "$ref": "163"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "172",
+      "id": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+      "name": "Penang Garden",
+      "operatingTime": "Mon-Thu 11 am - 10 pm  / Fri-Sat 10 am - 10:30 pm  / Sun 11 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "173",
+        "$values": [
+          {
+            "$id": "174",
+            "id": "eec5d896-eec2-4734-ad85-e228c5037e4e",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          },
+          {
+            "$id": "175",
+            "id": "0b7baaf6-9110-4421-9c34-0d47a37d3ca3",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          },
+          {
+            "$id": "176",
+            "id": "2d723774-3abf-4ce3-ace8-2a126f73ecaf",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          },
+          {
+            "$id": "177",
+            "id": "68bedd4b-c5da-4ed2-af27-1bf6626a86bd",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          },
+          {
+            "$id": "178",
+            "id": "4dd1e5b1-353c-458f-89ef-93f06ae14c14",
+            "openingDay": "Friday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          },
+          {
+            "$id": "179",
+            "id": "138e3538-c9ae-48b4-9984-28297c52fea2",
+            "openingDay": "Saturday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          },
+          {
+            "$id": "180",
+            "id": "60e51a0b-4eac-4c94-9499-5b0c320d2ab5",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "1923632f-a2ea-40a2-9d20-e76c835dcbdb",
+            "restaurant": {
+              "$ref": "172"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "181",
+      "id": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+      "name": "John's Grill",
+      "operatingTime": "Mon-Sat 11 am - 10 pm  / Sun 12 pm - 10 pm",
+      "restaurantTimes": {
+        "$id": "182",
+        "$values": [
+          {
+            "$id": "183",
+            "id": "ef5bbb15-cc56-4200-bcd3-241646438ccc",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          },
+          {
+            "$id": "184",
+            "id": "fc1db4ef-d5ad-4dd8-a6e4-ed472dc02c53",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          },
+          {
+            "$id": "185",
+            "id": "a8e89af9-3664-44fe-938d-5f3c19e96a83",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          },
+          {
+            "$id": "186",
+            "id": "da083627-05e6-4414-ab56-2738f03e18cd",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          },
+          {
+            "$id": "187",
+            "id": "af7b868a-3ab1-445c-beb4-57a02a7bd5de",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          },
+          {
+            "$id": "188",
+            "id": "ed7f8b8b-a482-4bef-b681-e18c8a951360",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          },
+          {
+            "$id": "189",
+            "id": "2e63c07e-c115-4234-b78a-270babfa6a98",
+            "openingDay": "Sunday",
+            "openingTime": "12:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "b387b5ed-e436-4311-8d06-9a4626a4cb16",
+            "restaurant": {
+              "$ref": "181"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "190",
+      "id": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+      "name": "Quan Bac",
+      "operatingTime": "Mon-Sun 11 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "191",
+        "$values": [
+          {
+            "$id": "192",
+            "id": "91fc185c-c334-4671-aa16-96e582b0c459",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          },
+          {
+            "$id": "193",
+            "id": "beffacaa-413e-4e28-ba11-ea833b4c65d9",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          },
+          {
+            "$id": "194",
+            "id": "4f7807f2-395a-408c-b12e-1b4c7e2b102f",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          },
+          {
+            "$id": "195",
+            "id": "4d0c5b9d-7dfa-46cc-88dc-a3b4ed523dab",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          },
+          {
+            "$id": "196",
+            "id": "f54cbdfa-615e-41c5-af1e-1321d7316f25",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          },
+          {
+            "$id": "197",
+            "id": "e9b66e79-60bb-4b50-8db1-0de0b44d2cf4",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          },
+          {
+            "$id": "198",
+            "id": "714be003-4a4f-4b91-aca5-8e852a65da02",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "c9fcc4d6-2218-489f-9bee-212c09cc652f",
+            "restaurant": {
+              "$ref": "190"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "199",
+      "id": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+      "name": "Bamboo Restaurant",
+      "operatingTime": "Mon-Sat 11 am - 12 am  / Sun 12 pm - 12 am",
+      "restaurantTimes": {
+        "$id": "200",
+        "$values": [
+          {
+            "$id": "201",
+            "id": "79e2fc66-2efd-4ec1-b0e3-73c27472b7fa",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          },
+          {
+            "$id": "202",
+            "id": "da5406d8-c464-4187-b4cb-61cf3515a93e",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          },
+          {
+            "$id": "203",
+            "id": "e16fdb2e-dece-4e9a-9749-6470f97158d1",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          },
+          {
+            "$id": "204",
+            "id": "4527cd84-57eb-4489-bec2-05a90a9e9580",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          },
+          {
+            "$id": "205",
+            "id": "b2e77e1e-876b-4009-a72a-260f836ad7db",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          },
+          {
+            "$id": "206",
+            "id": "41124a3f-180b-43c9-8d5a-7479f01b65f9",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          },
+          {
+            "$id": "207",
+            "id": "97dfe506-19e7-4259-9199-f277eb0bd86f",
+            "openingDay": "Sunday",
+            "openingTime": "12:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "2db8fcd4-2170-43b9-b79f-2bc71fb12fb6",
+            "restaurant": {
+              "$ref": "199"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "208",
+      "id": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+      "name": "Burger Bar",
+      "operatingTime": "Mon-Thu, Sun 11 am - 10 pm  / Fri-Sat 11 am - 12 am",
+      "restaurantTimes": {
+        "$id": "209",
+        "$values": [
+          {
+            "$id": "210",
+            "id": "4d2c3e8a-14f1-45e9-ba5f-967291280085",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          },
+          {
+            "$id": "211",
+            "id": "79a45def-a1d7-4abb-aed5-399668284427",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          },
+          {
+            "$id": "212",
+            "id": "b0aa0524-f54c-43d6-b3ab-70b079e6a999",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          },
+          {
+            "$id": "213",
+            "id": "31cf154e-1219-4fed-a449-cb567f9e68dc",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          },
+          {
+            "$id": "214",
+            "id": "5a892d2b-0e02-4375-9f26-e24c1b6bcfd5",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          },
+          {
+            "$id": "215",
+            "id": "aaae71ba-f603-479e-8fb2-567f5dbdd803",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          },
+          {
+            "$id": "216",
+            "id": "47391d6a-4790-4307-b842-dbf76a1fab7a",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "67b4a568-14f2-4927-9427-4b902bb0fd97",
+            "restaurant": {
+              "$ref": "208"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "217",
+      "id": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+      "name": "Blu Restaurant",
+      "operatingTime": "Mon-Fri 11:30 am - 10 pm  / Sat-Sun 7 am - 3 pm",
+      "restaurantTimes": {
+        "$id": "218",
+        "$values": [
+          {
+            "$id": "219",
+            "id": "2eda44a3-c14a-45c5-8e2f-31ae9f2852e8",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          },
+          {
+            "$id": "220",
+            "id": "f40c0e31-f83a-4e30-a276-b0a0986024a4",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          },
+          {
+            "$id": "221",
+            "id": "1c5461c0-d90c-47d7-9feb-4cffd0b99816",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          },
+          {
+            "$id": "222",
+            "id": "f8c52d78-8c92-494e-b8d9-5caac90e82f6",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          },
+          {
+            "$id": "223",
+            "id": "66453b48-b227-4362-87a0-730b9d03e368",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          },
+          {
+            "$id": "224",
+            "id": "4f2ea367-7100-4b2c-b669-b95b56152810",
+            "openingDay": "Saturday",
+            "openingTime": "07:00:00",
+            "closingTime": "15:00:00",
+            "totalTimeDuration": "08:00:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          },
+          {
+            "$id": "225",
+            "id": "638a7ee5-13f6-4da3-9a8e-d450d486a4f9",
+            "openingDay": "Sunday",
+            "openingTime": "07:00:00",
+            "closingTime": "15:00:00",
+            "totalTimeDuration": "08:00:00",
+            "restaurantId": "dcebd858-1da0-48f4-bbcd-d917bc39aafa",
+            "restaurant": {
+              "$ref": "217"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "226",
+      "id": "65a4e004-4001-4842-8b0a-efc24c636f55",
+      "name": "Naan 'N' Curry",
+      "operatingTime": "Mon-Sun 11 am - 4 am",
+      "restaurantTimes": {
+        "$id": "227",
+        "$values": [
+          {
+            "$id": "228",
+            "id": "3a56407c-7dd6-4738-a4d8-7073ae7922ac",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          },
+          {
+            "$id": "229",
+            "id": "e6aca20c-5f5a-489c-8711-477f57a50791",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          },
+          {
+            "$id": "230",
+            "id": "53c19f08-54d1-42d0-8d01-4f1630b63d57",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          },
+          {
+            "$id": "231",
+            "id": "f97a8b0f-e665-482f-8ef0-2a73d3b6e7c2",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          },
+          {
+            "$id": "232",
+            "id": "b6d18dbd-063c-4a29-bf83-94050f35c888",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          },
+          {
+            "$id": "233",
+            "id": "d8f6217d-a685-496e-b5ef-5ffc46e96cb6",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          },
+          {
+            "$id": "234",
+            "id": "efe9733b-9826-42e6-98ba-5681b8685a48",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.04:00:00",
+            "totalTimeDuration": "17:00:00",
+            "restaurantId": "65a4e004-4001-4842-8b0a-efc24c636f55",
+            "restaurant": {
+              "$ref": "226"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "235",
+      "id": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+      "name": "Shanghai China Restaurant",
+      "operatingTime": "Mon-Sun 11 am - 9:30 pm",
+      "restaurantTimes": {
+        "$id": "236",
+        "$values": [
+          {
+            "$id": "237",
+            "id": "b22c400e-39dd-4d60-b7f1-b9849151c755",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          },
+          {
+            "$id": "238",
+            "id": "31c5212f-e4a7-4ee5-afef-73705cdcaca6",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          },
+          {
+            "$id": "239",
+            "id": "a3243315-660e-412e-84ca-fd88b8c2c09a",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          },
+          {
+            "$id": "240",
+            "id": "33709488-eeef-4ad1-9114-8f2c440e9925",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          },
+          {
+            "$id": "241",
+            "id": "31b77825-4f98-4221-80ab-ffe0433b4b69",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          },
+          {
+            "$id": "242",
+            "id": "4f7a62aa-9f91-4c02-94eb-1ec8625cf3b2",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          },
+          {
+            "$id": "243",
+            "id": "a6518838-db78-46df-b86f-01ddf5f12a38",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "6b866caf-d528-4f61-bf9e-43e5d74d48a7",
+            "restaurant": {
+              "$ref": "235"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "244",
+      "id": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+      "name": "Tres",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 10 pm  / Fri-Sat 11:30 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "245",
+        "$values": [
+          {
+            "$id": "246",
+            "id": "f9ab8e12-1bb1-4524-b5b3-cb10b49d3f7b",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          },
+          {
+            "$id": "247",
+            "id": "7af7d036-1f99-4c2b-b06a-b38fb474f3da",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          },
+          {
+            "$id": "248",
+            "id": "01d4a39a-87b0-4702-b144-d329677e6158",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          },
+          {
+            "$id": "249",
+            "id": "88c98caf-f732-475d-aa7e-a0a4a148d74c",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          },
+          {
+            "$id": "250",
+            "id": "decf2654-6163-4668-a4d6-e31d362118df",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          },
+          {
+            "$id": "251",
+            "id": "33d330ad-c028-4f79-b069-1f48f5e4187a",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          },
+          {
+            "$id": "252",
+            "id": "f8f32d9e-1998-4c36-9279-8060cf73307f",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "4c8e41e4-1e66-44c5-beed-0ac3f9f195c0",
+            "restaurant": {
+              "$ref": "244"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "253",
+      "id": "1abf07f4-9064-4418-a61c-25a153c70b07",
+      "name": "Isobune Sushi",
+      "operatingTime": "Mon-Sun 11:30 am - 9:30 pm",
+      "restaurantTimes": {
+        "$id": "254",
+        "$values": [
+          {
+            "$id": "255",
+            "id": "b4f1a65f-d703-4053-aa3b-3fd1be453de1",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          },
+          {
+            "$id": "256",
+            "id": "cb31c5d8-0042-4769-b9f6-7e887d512e49",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          },
+          {
+            "$id": "257",
+            "id": "32f6e3b7-ce8c-438c-ba62-014fa28a6e13",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          },
+          {
+            "$id": "258",
+            "id": "ab410222-9ef5-421d-888b-97397187072d",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          },
+          {
+            "$id": "259",
+            "id": "782e4236-f2fe-499b-a0a5-97956c01c562",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          },
+          {
+            "$id": "260",
+            "id": "361520ef-717c-49d9-be6d-36c6d99073b7",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          },
+          {
+            "$id": "261",
+            "id": "24416cca-9823-47c8-a581-4ef1907f0206",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "1abf07f4-9064-4418-a61c-25a153c70b07",
+            "restaurant": {
+              "$ref": "253"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "262",
+      "id": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+      "name": "Viva Pizza Restaurant",
+      "operatingTime": "Mon-Sun 11 am - 12 am",
+      "restaurantTimes": {
+        "$id": "263",
+        "$values": [
+          {
+            "$id": "264",
+            "id": "951f817b-5c2a-4f45-83a2-6935c45877d4",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          },
+          {
+            "$id": "265",
+            "id": "d4a3aa72-4030-47a6-be49-b8dfb3b73b6e",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          },
+          {
+            "$id": "266",
+            "id": "5cdc908e-d10c-4e2b-abdf-9ab6261e7c5e",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          },
+          {
+            "$id": "267",
+            "id": "ec1f0614-ec08-4f09-ac6e-8397d3348a5a",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          },
+          {
+            "$id": "268",
+            "id": "06442292-d493-4688-b129-1a9c6fb10b5e",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          },
+          {
+            "$id": "269",
+            "id": "5d002303-12c2-49be-987c-2d925b6f4a85",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          },
+          {
+            "$id": "270",
+            "id": "57d19a05-0fb3-4e8e-95fd-da98e7d44931",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.00:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "8ad0aa72-c58b-4bd6-8fc9-ea236f0ed61e",
+            "restaurant": {
+              "$ref": "262"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "271",
+      "id": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+      "name": "Far East Cafe",
+      "operatingTime": "Mon-Sun 11:30 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "272",
+        "$values": [
+          {
+            "$id": "273",
+            "id": "0b4b0225-372a-4461-ba93-657a915db2dd",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          },
+          {
+            "$id": "274",
+            "id": "e332d448-69ba-4824-bfef-4ccb890beaaa",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          },
+          {
+            "$id": "275",
+            "id": "19111a7b-0157-4605-9f81-b7ad5f93c37d",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          },
+          {
+            "$id": "276",
+            "id": "17d52100-d9ab-4f59-ae70-f0c622248eeb",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          },
+          {
+            "$id": "277",
+            "id": "64e199bd-c522-4469-9f27-c7d907423a91",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          },
+          {
+            "$id": "278",
+            "id": "b8d18df6-c40c-4081-adaa-369f6bf3ae2e",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          },
+          {
+            "$id": "279",
+            "id": "33347140-c7d8-43fe-b730-c0749a5e1ace",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "206d5fb3-6812-4e92-83fc-001a34fee5f7",
+            "restaurant": {
+              "$ref": "271"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "280",
+      "id": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+      "name": "Parallel 37",
+      "operatingTime": "Mon-Sun 11:30 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "281",
+        "$values": [
+          {
+            "$id": "282",
+            "id": "54878207-0a4e-4d83-9b70-301ec854b8dd",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          },
+          {
+            "$id": "283",
+            "id": "f70005a4-2ef7-4765-bd86-471799af93f3",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          },
+          {
+            "$id": "284",
+            "id": "65946b3a-da64-4a54-a55f-4e809b4e05f9",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          },
+          {
+            "$id": "285",
+            "id": "acfcd284-6363-439d-b1e7-425acdb78116",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          },
+          {
+            "$id": "286",
+            "id": "0c9d8952-6f2b-498a-bcb7-b4a80dbd468d",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          },
+          {
+            "$id": "287",
+            "id": "fa1483ce-d2af-49ce-83a1-425ef791907a",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          },
+          {
+            "$id": "288",
+            "id": "cad21a25-3290-4100-8797-57a01dd30f32",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "c9c5ea46-7d5d-4ca4-8296-259a2a16cc50",
+            "restaurant": {
+              "$ref": "280"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "289",
+      "id": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+      "name": "Bai Thong Thai Cuisine",
+      "operatingTime": "Mon-Sat 11 am - 11 pm  / Sun 11 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "290",
+        "$values": [
+          {
+            "$id": "291",
+            "id": "fb003438-6cdf-4364-937c-90f382e193cf",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          },
+          {
+            "$id": "292",
+            "id": "d96d5556-c56f-4411-b5bd-476c8dc20031",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          },
+          {
+            "$id": "293",
+            "id": "ed33c419-79b9-43a7-9673-ba9ab9cc5951",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          },
+          {
+            "$id": "294",
+            "id": "9d4f01c8-cad9-4196-9990-33614ece1bb0",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          },
+          {
+            "$id": "295",
+            "id": "e46aedfb-25e7-49bd-9cd2-cd165467d333",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          },
+          {
+            "$id": "296",
+            "id": "a5984bff-40ea-44bb-848b-680e57f26557",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          },
+          {
+            "$id": "297",
+            "id": "c77d14e5-ec8b-434d-a5ee-5f77604da3ba",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "fe97ca62-9c51-44ba-b3a5-8ed67c71d6fd",
+            "restaurant": {
+              "$ref": "289"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "298",
+      "id": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+      "name": "Alhamra",
+      "operatingTime": "Mon-Sun 11 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "299",
+        "$values": [
+          {
+            "$id": "300",
+            "id": "6e6be76c-85db-493c-a760-7db414fcf691",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          },
+          {
+            "$id": "301",
+            "id": "a24aaf1e-e8b9-452a-82ad-dc8f114b55b7",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          },
+          {
+            "$id": "302",
+            "id": "7ce149c4-2638-4e91-a02b-d700f0a11f27",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          },
+          {
+            "$id": "303",
+            "id": "7daa0eed-1038-4a2d-acd0-4691c04d7b23",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          },
+          {
+            "$id": "304",
+            "id": "33eccff4-1fc1-4ce3-b6c8-8581a44a9725",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          },
+          {
+            "$id": "305",
+            "id": "6a1b6d8d-6fb3-47a7-9294-7550b999b20b",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          },
+          {
+            "$id": "306",
+            "id": "53bcc8f8-56af-4351-93c9-b01750b8fac1",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "ab4a6ea9-c44e-46dc-aebe-fcc1831d178f",
+            "restaurant": {
+              "$ref": "298"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "307",
+      "id": "625cd657-2291-4185-83d9-c2f309cc0403",
+      "name": "A-1 Cafe Restaurant",
+      "operatingTime": "Mon, Wed-Sun 11 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "308",
+        "$values": [
+          {
+            "$id": "309",
+            "id": "5625da5e-05fc-42b1-a4dc-db157f110a5e",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "625cd657-2291-4185-83d9-c2f309cc0403",
+            "restaurant": {
+              "$ref": "307"
+            }
+          },
+          {
+            "$id": "310",
+            "id": "57358f2b-bfae-4aac-a0dd-21923cf0b3e5",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "625cd657-2291-4185-83d9-c2f309cc0403",
+            "restaurant": {
+              "$ref": "307"
+            }
+          },
+          {
+            "$id": "311",
+            "id": "ea3ce665-cd58-4886-8185-ab882ddb52b1",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "625cd657-2291-4185-83d9-c2f309cc0403",
+            "restaurant": {
+              "$ref": "307"
+            }
+          },
+          {
+            "$id": "312",
+            "id": "029b3f32-464c-4f79-98ef-3565cd4bf7f0",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "625cd657-2291-4185-83d9-c2f309cc0403",
+            "restaurant": {
+              "$ref": "307"
+            }
+          },
+          {
+            "$id": "313",
+            "id": "850e6830-1ab8-4cc1-99c1-391a4a8b6133",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "625cd657-2291-4185-83d9-c2f309cc0403",
+            "restaurant": {
+              "$ref": "307"
+            }
+          },
+          {
+            "$id": "314",
+            "id": "bb7c7b2d-4624-4f23-8b49-d85dcfa9690f",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "625cd657-2291-4185-83d9-c2f309cc0403",
+            "restaurant": {
+              "$ref": "307"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "315",
+      "id": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+      "name": "Nick's Lighthouse",
+      "operatingTime": "Mon-Sun 11 am - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "316",
+        "$values": [
+          {
+            "$id": "317",
+            "id": "1b3fb444-05ca-4a75-aa36-714ea83db650",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          },
+          {
+            "$id": "318",
+            "id": "72955400-1c3f-4e97-ae98-02a0483bd81b",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          },
+          {
+            "$id": "319",
+            "id": "30a3be28-6632-4637-8d5e-015a17f78372",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          },
+          {
+            "$id": "320",
+            "id": "1f2245ce-3f95-4d4c-b344-8620218b1138",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          },
+          {
+            "$id": "321",
+            "id": "b177aa3c-6556-4f5a-92df-8ede17e1138c",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          },
+          {
+            "$id": "322",
+            "id": "5f5df0c3-2d82-4259-80e1-c059000da996",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          },
+          {
+            "$id": "323",
+            "id": "591dee27-509d-42e1-bb56-01438662a41a",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "741e47e5-6bcd-4704-8a12-3561e1e2e911",
+            "restaurant": {
+              "$ref": "315"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "324",
+      "id": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+      "name": "Paragon Restaurant & Bar",
+      "operatingTime": "Mon-Fri 11:30 am - 10 pm  / Sat 5:30 pm - 10 pm",
+      "restaurantTimes": {
+        "$id": "325",
+        "$values": [
+          {
+            "$id": "326",
+            "id": "278e6c8c-77e3-40d6-a846-d9475b9b5189",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+            "restaurant": {
+              "$ref": "324"
+            }
+          },
+          {
+            "$id": "327",
+            "id": "017b0636-1a75-46e6-b8e3-9447f0529deb",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+            "restaurant": {
+              "$ref": "324"
+            }
+          },
+          {
+            "$id": "328",
+            "id": "d93e1ead-e038-4b29-a906-380f0db4508f",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+            "restaurant": {
+              "$ref": "324"
+            }
+          },
+          {
+            "$id": "329",
+            "id": "e3559596-4b8b-4a60-9437-12c14b30dd25",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+            "restaurant": {
+              "$ref": "324"
+            }
+          },
+          {
+            "$id": "330",
+            "id": "7e39c922-1d38-41fd-9286-ba0366430baa",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+            "restaurant": {
+              "$ref": "324"
+            }
+          },
+          {
+            "$id": "331",
+            "id": "e1cc6739-a124-4f90-8e0d-b48d31b7773d",
+            "openingDay": "Saturday",
+            "openingTime": "17:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "04:30:00",
+            "restaurantId": "dee90716-b0e3-49bc-8814-d2d2b26b4b94",
+            "restaurant": {
+              "$ref": "324"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "332",
+      "id": "3f664347-c40c-477f-99df-1e958688c915",
+      "name": "Chili Lemon Garlic",
+      "operatingTime": "Mon-Fri 11 am - 10 pm  / Sat-Sun 5 pm - 10 pm",
+      "restaurantTimes": {
+        "$id": "333",
+        "$values": [
+          {
+            "$id": "334",
+            "id": "fac316e0-6994-4e5b-9ff6-9642b1adf010",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          },
+          {
+            "$id": "335",
+            "id": "e03080d0-4e24-460d-970c-e98004449cf8",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          },
+          {
+            "$id": "336",
+            "id": "e5380bda-04a8-4c97-b23d-7c4182b9d934",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          },
+          {
+            "$id": "337",
+            "id": "162f08b2-0351-4462-8ac1-8e1cf3180cca",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          },
+          {
+            "$id": "338",
+            "id": "263b4797-0a5f-40cb-ba3d-5d9fe39a3aea",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          },
+          {
+            "$id": "339",
+            "id": "d997e04f-2b7d-48ec-b569-c7f41d49e759",
+            "openingDay": "Saturday",
+            "openingTime": "17:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "05:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          },
+          {
+            "$id": "340",
+            "id": "64650d39-5699-44e3-aa1d-43a2b578cc17",
+            "openingDay": "Sunday",
+            "openingTime": "17:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "05:00:00",
+            "restaurantId": "3f664347-c40c-477f-99df-1e958688c915",
+            "restaurant": {
+              "$ref": "332"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "341",
+      "id": "b479b53a-9508-4044-8758-670617f13a47",
+      "name": "Bow Hon Restaurant",
+      "operatingTime": "Mon-Sun 11 am - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "342",
+        "$values": [
+          {
+            "$id": "343",
+            "id": "e7ec558d-e8a8-4a15-a2d8-a9884769e701",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          },
+          {
+            "$id": "344",
+            "id": "d7425ffd-a46b-42a5-968d-1d6cdb2592de",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          },
+          {
+            "$id": "345",
+            "id": "31095d0a-d0c1-4f12-9704-f0097e92f71c",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          },
+          {
+            "$id": "346",
+            "id": "22464195-5011-423b-a643-a1dff6c5a7e5",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          },
+          {
+            "$id": "347",
+            "id": "b43240aa-d14b-4087-8190-9053a1bd9b12",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          },
+          {
+            "$id": "348",
+            "id": "e66dc171-0164-4bdf-ad4a-1a7fff2210fe",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          },
+          {
+            "$id": "349",
+            "id": "f05811be-6873-45e9-bc34-9a6f5f2585fa",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "b479b53a-9508-4044-8758-670617f13a47",
+            "restaurant": {
+              "$ref": "341"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "350",
+      "id": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+      "name": "San Dong House",
+      "operatingTime": "Mon-Sun 11 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "351",
+        "$values": [
+          {
+            "$id": "352",
+            "id": "45dc8ce9-f991-4b4a-9e2d-3e6b9bdd0fbe",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          },
+          {
+            "$id": "353",
+            "id": "7353e164-8e3b-4d1a-9da0-7903d1f7bbee",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          },
+          {
+            "$id": "354",
+            "id": "db5ccd98-9df2-43e7-8896-8a3b5ef37f88",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          },
+          {
+            "$id": "355",
+            "id": "0ae92c37-a15b-433b-8374-a60159e77df9",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          },
+          {
+            "$id": "356",
+            "id": "589a5495-3feb-404c-bd66-ab5956128b3c",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          },
+          {
+            "$id": "357",
+            "id": "7ecc47e1-2334-4b24-b40c-d88caf7dc26f",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          },
+          {
+            "$id": "358",
+            "id": "020a936c-b83c-4e87-9802-249b720fb96a",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "67434af0-9a65-4840-ad50-0a2b1191cc10",
+            "restaurant": {
+              "$ref": "350"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "359",
+      "id": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+      "name": "Thai Stick Restaurant",
+      "operatingTime": "Mon-Sun 11 am - 1 am",
+      "restaurantTimes": {
+        "$id": "360",
+        "$values": [
+          {
+            "$id": "361",
+            "id": "aa29e435-747d-4d17-9f79-1b0fcb2689d0",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          },
+          {
+            "$id": "362",
+            "id": "03ce0afe-18c7-4590-a885-d5267f3d7c6b",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          },
+          {
+            "$id": "363",
+            "id": "e694a4f4-f4b0-4002-8a10-8264a41f9a9d",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          },
+          {
+            "$id": "364",
+            "id": "d28caf3c-f0bd-406f-90e7-95912904a2db",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          },
+          {
+            "$id": "365",
+            "id": "d39ff799-9ede-4944-9f6f-9c9f75300e0a",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          },
+          {
+            "$id": "366",
+            "id": "e259d07f-a083-4155-ba74-a58488c65004",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          },
+          {
+            "$id": "367",
+            "id": "e412db75-0db9-42b3-a7bf-2d849d62eb0b",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "1.01:00:00",
+            "totalTimeDuration": "14:00:00",
+            "restaurantId": "dc24a7a7-16e3-4429-9927-7d35d04ae68f",
+            "restaurant": {
+              "$ref": "359"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "368",
+      "id": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+      "name": "Cesario's",
+      "operatingTime": "Mon-Thu, Sun 11:30 am - 10 pm  / Fri-Sat 11:30 am - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "369",
+        "$values": [
+          {
+            "$id": "370",
+            "id": "512fa668-8267-4373-b386-fd0c692ca9ca",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          },
+          {
+            "$id": "371",
+            "id": "925b902c-7a88-4ae2-bd8f-f604b7ad696f",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          },
+          {
+            "$id": "372",
+            "id": "f8d0acd9-f2c3-4b42-8174-9511038991b9",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          },
+          {
+            "$id": "373",
+            "id": "e7051df6-687b-419f-9be6-df2344b13de8",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          },
+          {
+            "$id": "374",
+            "id": "329317fd-7438-4e2d-b57a-9f821b44a43c",
+            "openingDay": "Sunday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          },
+          {
+            "$id": "375",
+            "id": "e52b40d2-6b38-4719-a303-12367347705a",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          },
+          {
+            "$id": "376",
+            "id": "7aa5b7b2-64d8-48d3-9320-af4b281e1c16",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:00:00",
+            "restaurantId": "237bfd83-7c26-4f8f-884f-da54e24d6f78",
+            "restaurant": {
+              "$ref": "368"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "377",
+      "id": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+      "name": "Colombini Italian Cafe Bistro",
+      "operatingTime": "Mon-Fri 12 pm - 10 pm  / Sat-Sun 5 pm - 10 pm",
+      "restaurantTimes": {
+        "$id": "378",
+        "$values": [
+          {
+            "$id": "379",
+            "id": "1867db5a-2d29-4cef-be6f-e7dff0374a09",
+            "openingDay": "Monday",
+            "openingTime": "12:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          },
+          {
+            "$id": "380",
+            "id": "044e2eb8-9726-4d7c-9c61-3ce6e3f5b431",
+            "openingDay": "Tuesday",
+            "openingTime": "12:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          },
+          {
+            "$id": "381",
+            "id": "6a7195c0-18e8-47b4-b260-d64f2ab0be99",
+            "openingDay": "Wednesday",
+            "openingTime": "12:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          },
+          {
+            "$id": "382",
+            "id": "2dec55c4-40ce-4d8a-9a7c-f08b076fbefe",
+            "openingDay": "Thursday",
+            "openingTime": "12:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          },
+          {
+            "$id": "383",
+            "id": "babcc676-d7df-4029-a8bc-7211f4af36ab",
+            "openingDay": "Friday",
+            "openingTime": "12:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          },
+          {
+            "$id": "384",
+            "id": "b46b1f15-6523-4f4b-8ee2-b6429a30599b",
+            "openingDay": "Saturday",
+            "openingTime": "17:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "05:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          },
+          {
+            "$id": "385",
+            "id": "1b53090c-0d7b-4ebb-ac6e-2bc1a5d47021",
+            "openingDay": "Sunday",
+            "openingTime": "17:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "05:00:00",
+            "restaurantId": "d77a5a65-2fd1-44a1-8c0c-6fb7640a3ddf",
+            "restaurant": {
+              "$ref": "377"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "386",
+      "id": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+      "name": "Sabella & La Torre",
+      "operatingTime": "Mon-Thu, Sun 10 am - 10:30 pm  / Fri-Sat 10 am - 12:30 am",
+      "restaurantTimes": {
+        "$id": "387",
+        "$values": [
+          {
+            "$id": "388",
+            "id": "ce7b6289-da4b-48fc-9ec5-1684a0446c1c",
+            "openingDay": "Monday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          },
+          {
+            "$id": "389",
+            "id": "3b4c3ddd-170d-4a1d-b1f5-1b6604f15026",
+            "openingDay": "Tuesday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          },
+          {
+            "$id": "390",
+            "id": "a0170d08-d7d2-49bb-b53a-6de3d9c70f98",
+            "openingDay": "Wednesday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          },
+          {
+            "$id": "391",
+            "id": "87fa4c41-3545-458e-91b6-c05f667d9beb",
+            "openingDay": "Thursday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          },
+          {
+            "$id": "392",
+            "id": "31f334d0-3903-4234-acef-8cd5648a9349",
+            "openingDay": "Sunday",
+            "openingTime": "10:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          },
+          {
+            "$id": "393",
+            "id": "ef6322e7-b5f7-4a7d-821e-9a6297163ea2",
+            "openingDay": "Friday",
+            "openingTime": "10:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          },
+          {
+            "$id": "394",
+            "id": "2c68b3c8-36d5-48ad-9300-9e3ae1602f4f",
+            "openingDay": "Saturday",
+            "openingTime": "10:00:00",
+            "closingTime": "1.00:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "37000b24-99e3-4fab-b5dd-84d19a3307a3",
+            "restaurant": {
+              "$ref": "386"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "395",
+      "id": "0bab866e-58ec-418e-857d-806bcf6ce489",
+      "name": "Soluna Cafe and Lounge",
+      "operatingTime": "Mon-Fri 11:30 am - 10 pm  / Sat 5 pm - 10 pm",
+      "restaurantTimes": {
+        "$id": "396",
+        "$values": [
+          {
+            "$id": "397",
+            "id": "096e032a-0ebb-4aed-bc62-1f56515f91d7",
+            "openingDay": "Monday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "0bab866e-58ec-418e-857d-806bcf6ce489",
+            "restaurant": {
+              "$ref": "395"
+            }
+          },
+          {
+            "$id": "398",
+            "id": "a0b4e49d-afae-48b1-8a1c-5db525de375f",
+            "openingDay": "Tuesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "0bab866e-58ec-418e-857d-806bcf6ce489",
+            "restaurant": {
+              "$ref": "395"
+            }
+          },
+          {
+            "$id": "399",
+            "id": "5dd48afb-47a0-4b43-a166-6f8a96fe0ea3",
+            "openingDay": "Wednesday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "0bab866e-58ec-418e-857d-806bcf6ce489",
+            "restaurant": {
+              "$ref": "395"
+            }
+          },
+          {
+            "$id": "400",
+            "id": "3ec63477-9257-4eda-9e68-5d0f3ea7a40b",
+            "openingDay": "Thursday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "0bab866e-58ec-418e-857d-806bcf6ce489",
+            "restaurant": {
+              "$ref": "395"
+            }
+          },
+          {
+            "$id": "401",
+            "id": "de899b09-5d64-435d-a1af-9593667d0609",
+            "openingDay": "Friday",
+            "openingTime": "11:30:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "10:30:00",
+            "restaurantId": "0bab866e-58ec-418e-857d-806bcf6ce489",
+            "restaurant": {
+              "$ref": "395"
+            }
+          },
+          {
+            "$id": "402",
+            "id": "b6fd50f5-32c8-4d55-9175-9a6e1d229758",
+            "openingDay": "Saturday",
+            "openingTime": "17:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "05:00:00",
+            "restaurantId": "0bab866e-58ec-418e-857d-806bcf6ce489",
+            "restaurant": {
+              "$ref": "395"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "403",
+      "id": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+      "name": "Tong Palace",
+      "operatingTime": "Mon-Fri 9 am - 9:30 pm  / Sat-Sun 9 am - 10 pm",
+      "restaurantTimes": {
+        "$id": "404",
+        "$values": [
+          {
+            "$id": "405",
+            "id": "add2338a-e057-416a-8bc8-4b8cf476f971",
+            "openingDay": "Monday",
+            "openingTime": "09:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          },
+          {
+            "$id": "406",
+            "id": "b0cd7021-1a12-4530-8826-ba1954fbd922",
+            "openingDay": "Tuesday",
+            "openingTime": "09:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          },
+          {
+            "$id": "407",
+            "id": "f5db1318-1109-487c-91c9-03032b1e3a84",
+            "openingDay": "Wednesday",
+            "openingTime": "09:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          },
+          {
+            "$id": "408",
+            "id": "62b768b9-6cf4-400a-8a67-12d0640c9f9e",
+            "openingDay": "Thursday",
+            "openingTime": "09:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          },
+          {
+            "$id": "409",
+            "id": "a6f9f1c2-28ab-44f2-8f2f-7bff72171357",
+            "openingDay": "Friday",
+            "openingTime": "09:00:00",
+            "closingTime": "21:30:00",
+            "totalTimeDuration": "12:30:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          },
+          {
+            "$id": "410",
+            "id": "8aeba9e1-87cb-48cb-92c1-c3d8d00d84fe",
+            "openingDay": "Saturday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          },
+          {
+            "$id": "411",
+            "id": "8fcb37d8-55b8-4f2d-95f0-c196d38677a6",
+            "openingDay": "Sunday",
+            "openingTime": "09:00:00",
+            "closingTime": "22:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "d5e1e8b9-5b15-4960-b45b-8930643b8552",
+            "restaurant": {
+              "$ref": "403"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "412",
+      "id": "339b2b25-c7ce-453d-8530-0800b3be7379",
+      "name": "India Garden Restaurant",
+      "operatingTime": "Mon-Sun 10 am - 11 pm",
+      "restaurantTimes": {
+        "$id": "413",
+        "$values": [
+          {
+            "$id": "414",
+            "id": "75c43e83-4900-4e5c-8605-c32bff940aa9",
+            "openingDay": "Monday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          },
+          {
+            "$id": "415",
+            "id": "cd06cef3-1450-45b1-8866-c2050bdbaec3",
+            "openingDay": "Tuesday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          },
+          {
+            "$id": "416",
+            "id": "ecb1c49c-5cb4-4520-8af5-875c45ff5abe",
+            "openingDay": "Wednesday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          },
+          {
+            "$id": "417",
+            "id": "25aec35a-76a5-4a06-ba9a-c827e660d3af",
+            "openingDay": "Thursday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          },
+          {
+            "$id": "418",
+            "id": "27a1c519-f87e-46c0-95c4-5fd035324d32",
+            "openingDay": "Friday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          },
+          {
+            "$id": "419",
+            "id": "77979ad2-b83d-4d63-b970-70e96aa8a300",
+            "openingDay": "Saturday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          },
+          {
+            "$id": "420",
+            "id": "acc59917-e560-4842-99d9-918c0bc576ce",
+            "openingDay": "Sunday",
+            "openingTime": "10:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "13:00:00",
+            "restaurantId": "339b2b25-c7ce-453d-8530-0800b3be7379",
+            "restaurant": {
+              "$ref": "412"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "421",
+      "id": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+      "name": "Sapporo-Ya Japanese Restaurant",
+      "operatingTime": "Mon-Sat 11 am - 11 pm  / Sun 11 am - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "422",
+        "$values": [
+          {
+            "$id": "423",
+            "id": "c39e2c84-3b0e-497a-ba9b-fd6629616a9c",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          },
+          {
+            "$id": "424",
+            "id": "61047159-8e95-4104-8589-5bd0e462c0da",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          },
+          {
+            "$id": "425",
+            "id": "07cb4bbb-84e6-4636-a0cf-abae3d11fdf6",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          },
+          {
+            "$id": "426",
+            "id": "9559bedf-a826-45f5-b789-55e122a0ec92",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          },
+          {
+            "$id": "427",
+            "id": "fcb12df5-4f0f-47ae-8e04-a4c674802097",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          },
+          {
+            "$id": "428",
+            "id": "5f9995cc-9111-48cc-ba32-a9c31dfd3a36",
+            "openingDay": "Saturday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          },
+          {
+            "$id": "429",
+            "id": "c20b4325-be87-4788-99e0-dadbe4d8084d",
+            "openingDay": "Sunday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "0f556b52-2d2a-42c2-912b-7ce83e6943cc",
+            "restaurant": {
+              "$ref": "421"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "430",
+      "id": "10585ece-a594-4f74-acb9-624e1a2363e4",
+      "name": "Santorini's Mediterranean Cuisine",
+      "operatingTime": "Mon-Sun 8 am - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "431",
+        "$values": [
+          {
+            "$id": "432",
+            "id": "eb0409ec-d7d5-4cb0-b6e5-be00b003ccf6",
+            "openingDay": "Monday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          },
+          {
+            "$id": "433",
+            "id": "95d2e073-b688-465f-8454-185fe757dd60",
+            "openingDay": "Tuesday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          },
+          {
+            "$id": "434",
+            "id": "f363add2-3733-4578-a9c2-880e233a4902",
+            "openingDay": "Wednesday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          },
+          {
+            "$id": "435",
+            "id": "2b4fc226-98f9-457e-a662-1337dfe17c21",
+            "openingDay": "Thursday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          },
+          {
+            "$id": "436",
+            "id": "3a07a4aa-4117-4df6-b9f7-28f6adfcf086",
+            "openingDay": "Friday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          },
+          {
+            "$id": "437",
+            "id": "97a102b4-f98c-41f8-a616-cf943182f4ff",
+            "openingDay": "Saturday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          },
+          {
+            "$id": "438",
+            "id": "99ef8d2e-523d-4030-b15d-de0ec5b1f6b0",
+            "openingDay": "Sunday",
+            "openingTime": "08:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "14:30:00",
+            "restaurantId": "10585ece-a594-4f74-acb9-624e1a2363e4",
+            "restaurant": {
+              "$ref": "430"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$id": "439",
+      "id": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+      "name": "Kyoto Sushi",
+      "operatingTime": "Mon-Thu 11 am - 10:30 pm  / Fri 11 am - 11 pm  / Sat 11:30 am - 11 pm  / Sun 4:30 pm - 10:30 pm",
+      "restaurantTimes": {
+        "$id": "440",
+        "$values": [
+          {
+            "$id": "441",
+            "id": "f8b860fd-329e-4de7-a010-b6d6e153b86e",
+            "openingDay": "Monday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          },
+          {
+            "$id": "442",
+            "id": "7f569b8d-87ef-4012-82d5-17557dd37d91",
+            "openingDay": "Tuesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          },
+          {
+            "$id": "443",
+            "id": "561bde3c-7b93-4173-b254-97c7b5ae270b",
+            "openingDay": "Wednesday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          },
+          {
+            "$id": "444",
+            "id": "8f3b1773-39ab-4f70-a6dd-6a1a3989e829",
+            "openingDay": "Thursday",
+            "openingTime": "11:00:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          },
+          {
+            "$id": "445",
+            "id": "e6b906a3-79ad-4555-b075-7166114bb755",
+            "openingDay": "Friday",
+            "openingTime": "11:00:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "12:00:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          },
+          {
+            "$id": "446",
+            "id": "8c76265e-343b-432a-8ce4-176fc48a3e79",
+            "openingDay": "Saturday",
+            "openingTime": "11:30:00",
+            "closingTime": "23:00:00",
+            "totalTimeDuration": "11:30:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          },
+          {
+            "$id": "447",
+            "id": "b6112e9c-ba80-48fc-9319-92acc355b5d7",
+            "openingDay": "Sunday",
+            "openingTime": "16:30:00",
+            "closingTime": "22:30:00",
+            "totalTimeDuration": "06:00:00",
+            "restaurantId": "c1bd049e-18a7-4f5a-8515-cdeb79d1f525",
+            "restaurant": {
+              "$ref": "439"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

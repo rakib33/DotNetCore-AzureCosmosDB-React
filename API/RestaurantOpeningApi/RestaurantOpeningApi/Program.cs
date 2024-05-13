@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using RestaurantOpeningApi.DataContext;
+using RestaurantOpeningApi.DTOs;
 using RestaurantOpeningApi.Interfaces;
 using RestaurantOpeningApi.Repository;
 using RestaurantOpeningApi.Services;
+using System.Configuration;
 using System.Text.Json.Serialization;
 
 
@@ -46,6 +48,9 @@ builder.Services.AddScoped<IRestaurantService, RestaurantRepoService>();
 builder.Services.AddScoped<IRestaurantTimeService, RestaurentTimeRepoService>();
 builder.Services.AddScoped<IRestaurantDataService, RestaurantDataService>();
 
+
+//using IOptions pattern
+builder.Services.Configure<CosmosDbOptions>(builder.Configuration.GetSection("CosmosDb"));
 //possible object cycle avoiding 
 builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);

@@ -103,8 +103,24 @@ namespace RestaurantOpeningApi.Test.ServiceTest
             var result = await _repoService.GetAllRestaurantAsync(DataHelper.parameters("", "", "", pagination));
 
             // Assert
-            Assert.Single(result);
-            // Implement your assertions based on the expected content of the second page
+            Assert.Single(result);           
         }
+
+
+        //[Fact]
+        //public async Task Get_ReturnsItemsFilteredByDay()
+        //{
+        //    // Arrange
+        //    Pagination pagination = new Pagination();
+        //    pagination.PageSize = 2; // item per page
+        //    pagination.Page = 1; // take 1st page
+        //    string day = "The Cheesecake Factory";
+        //    // Act
+        //    var result = await _repoService.GetAllRestaurantAsync(DataHelper.parameters(fileterName, "", "", pagination));
+
+        //    // Assert
+        //    // Check if the result contains only items that match the filter criteria          
+        //    Assert.All(result, item => Assert.Contains(fileterName, item.Name));
+        //}
     }
 }
