@@ -6,7 +6,7 @@ This is a .Net Core Web API project with Cosmos DB. The objective of this sample
 
 ## Raw Data
 
-Here is the raw data for restaurant opening hours: [hours.csv](https://gist.githubusercontent.com/ramzan-bs-23/bbc98dc64516242ccdb37fbd08b7cc4f/raw/dd55d01a7fc8efcbb08c5a2062b5c59c3c0471f9/hours.csv).
+Here is the raw data for restaurant opening hours in **hours.csv** file.
 
 We treat this data as a raw source that requires extraction, transformation, and loading into the database.
 
